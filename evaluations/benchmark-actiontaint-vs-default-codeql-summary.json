@@ -1,0 +1,186 @@
+[
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [
+      {
+        "severity": "HIGH",
+        "sink": "app/actions.ts:7",
+        "snippet": "await db.query(`UPDATE tenants SET name = '${name}' WHERE id = '${tenantId}'`);",
+        "source": "app/actions.ts::updateTenant::tenantId",
+        "type": "SQL Injection"
+      }
+    ],
+    "actiontaint_reachable": 1,
+    "benchmark": "bind_argument",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  },
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [
+      {
+        "severity": "HIGH",
+        "sink": "app/actions.ts:7",
+        "snippet": "await db.query(`UPDATE users SET name = '${username}' WHERE id = 1`);",
+        "source": "app/actions.ts::saveProfile::formData",
+        "type": "SQL Injection"
+      }
+    ],
+    "actiontaint_reachable": 1,
+    "benchmark": "file_level_sql",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  },
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [
+      {
+        "severity": "HIGH",
+        "sink": "app/actions.ts:5",
+        "snippet": "await fetch(target);",
+        "source": "app/actions.ts::previewUrl::formData",
+        "type": "SSRF"
+      }
+    ],
+    "actiontaint_reachable": 1,
+    "benchmark": "formdata_fetch_ssrf",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  },
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [
+      {
+        "severity": "HIGH",
+        "sink": "app/db.ts:13",
+        "snippet": "return db.query(sql);",
+        "source": "app/db.ts::findUsersByTerm::formData",
+        "type": "SQL Injection"
+      }
+    ],
+    "actiontaint_reachable": 1,
+    "benchmark": "helper_wrapper_sql",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  },
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [
+      {
+        "severity": "HIGH",
+        "sink": "app/actions.ts:7",
+        "snippet": "await fs.readFile(path);",
+        "source": "app/actions.ts::readAttachment::formData",
+        "type": "Path Traversal"
+      }
+    ],
+    "actiontaint_reachable": 1,
+    "benchmark": "hidden_input",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  },
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [
+      {
+        "severity": "HIGH",
+        "sink": "app/actions.ts:7",
+        "snippet": "await prisma.post.delete({ where: { id: postId } });",
+        "source": "app/actions.ts::deletePost::formData",
+        "type": "Broken Authorization / IDOR"
+      }
+    ],
+    "actiontaint_reachable": 1,
+    "benchmark": "idor_prisma_delete",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  },
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [
+      {
+        "severity": "HIGH",
+        "sink": "app/page.tsx:7",
+        "snippet": "await db.query(\"INSERT INTO posts(title) VALUES ('\" + title + \"')\");",
+        "source": "app/page.tsx::createPost::formData",
+        "type": "SQL Injection"
+      }
+    ],
+    "actiontaint_reachable": 1,
+    "benchmark": "inline_sql",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  },
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [
+      {
+        "severity": "HIGH",
+        "sink": "app/actions.ts:7",
+        "snippet": "await db.query(`INSERT INTO invites(email) VALUES ('${body.email}')`);",
+        "source": "app/actions.ts::inviteUser::formData",
+        "type": "SQL Injection"
+      }
+    ],
+    "actiontaint_reachable": 1,
+    "benchmark": "object_entries_sql",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  },
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [
+      {
+        "severity": "HIGH",
+        "sink": "app/actions.ts:8",
+        "snippet": "await prisma.$queryRawUnsafe(query);",
+        "source": "app/actions.ts::searchUsers::formData",
+        "type": "SQL Injection"
+      }
+    ],
+    "actiontaint_reachable": 1,
+    "benchmark": "prisma_raw_unsafe",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  },
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [],
+    "actiontaint_reachable": 1,
+    "benchmark": "safe_authorized_delete",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  },
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [],
+    "actiontaint_reachable": 1,
+    "benchmark": "safe_parameterized_query",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  },
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [
+      {
+        "severity": "HIGH",
+        "sink": "app/actions.ts:7",
+        "snippet": "await db.query(`INSERT INTO users(email) VALUES ('${email}')`);",
+        "source": "app/actions.ts::createUser::formData",
+        "type": "SQL Injection"
+      }
+    ],
+    "actiontaint_reachable": 1,
+    "benchmark": "use_action_state",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  },
+  {
+    "actiontaint_actions": 1,
+    "actiontaint_findings": [],
+    "actiontaint_reachable": 1,
+    "benchmark": "zod_validation",
+    "default_codeql_findings": 0,
+    "default_codeql_rules": []
+  }
+]

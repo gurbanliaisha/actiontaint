@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+
+# Node (restore with: npm ci)
+node_modules/
+
+# ActionTaint scan and evaluation output
+.actiontaint/
+**/.actiontaint/
+**/.actiontaint-eval/
+outputs/

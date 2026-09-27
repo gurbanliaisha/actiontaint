@@ -1,0 +1,236 @@
+{
+  "schema": "actiontaint.datasets.real-projects.v1",
+  "notes": "Each scan target path is recorded relative to the original evaluation workspace, not relative to this GitHub artifact repository.",
+  "projects": [
+    {
+      "project_id": "nextjs-starter-medusa",
+      "display_name": "nextjs-starter-medusa",
+      "upstream_repository": "medusajs/nextjs-starter-medusa",
+      "evaluation_sets": [
+        "real-world-round1",
+        "static-analyzer-comparison"
+      ],
+      "scan_targets_during_evaluation": [
+        {
+          "evaluation_set": "real-world-round1",
+          "scan_target": "nextjs-starter-medusa"
+        },
+        {
+          "evaluation_set": "static-analyzer-comparison",
+          "scan_target": "nextjs-starter-medusa"
+        }
+      ],
+      "seeded_variants": [
+        "seeded-medusa-ssrf"
+      ],
+      "notes": "Round 1 produced five open-redirect triage findings; later used for a seeded SSRF experiment."
+    },
+    {
+      "project_id": "next-saas-stripe-starter",
+      "display_name": "next-saas-stripe-starter",
+      "upstream_repository": "mickasmt/next-saas-stripe-starter",
+      "evaluation_sets": [
+        "real-world-round1",
+        "round3-comparison",
+        "static-analyzer-comparison"
+      ],
+      "scan_targets_during_evaluation": [
+        {
+          "evaluation_set": "real-world-round1",
+          "scan_target": "next-saas-stripe-starter"
+        },
+        {
+          "evaluation_set": "round3-comparison",
+          "scan_target": "real-nextjs-projects-round3/next-saas-stripe-starter"
+        },
+        {
+          "evaluation_set": "static-analyzer-comparison",
+          "scan_target": "next-saas-stripe-starter"
+        }
+      ],
+      "seeded_variants": [
+        "seeded-next-saas-stripe-ssrf"
+      ],
+      "notes": "Used both as a clean real-world target and as a seeded SSRF target."
+    },
+    {
+      "project_id": "saas-starter",
+      "display_name": "saas-starter",
+      "upstream_repository": "nextjs/saas-starter",
+      "evaluation_sets": [
+        "real-world-round1",
+        "static-analyzer-comparison"
+      ],
+      "scan_targets_during_evaluation": [
+        {
+          "evaluation_set": "real-world-round1",
+          "scan_target": "saas-starter"
+        },
+        {
+          "evaluation_set": "static-analyzer-comparison",
+          "scan_target": "saas-starter"
+        }
+      ],
+      "seeded_variants": [],
+      "notes": "Included as a medium-sized SaaS/auth target."
+    },
+    {
+      "project_id": "nextjs-auth-starter",
+      "display_name": "nextjs-auth-starter",
+      "upstream_repository": "prisma/nextjs-auth-starter",
+      "evaluation_sets": [
+        "real-world-round1",
+        "static-analyzer-comparison"
+      ],
+      "scan_targets_during_evaluation": [
+        {
+          "evaluation_set": "real-world-round1",
+          "scan_target": "nextjs-auth-starter"
+        },
+        {
+          "evaluation_set": "static-analyzer-comparison",
+          "scan_target": "nextjs-auth-starter"
+        }
+      ],
+      "seeded_variants": [],
+      "notes": "Compact auth-and-posts example used in round 1 and supplementary comparison."
+    },
+    {
+      "project_id": "postgres-next-starter",
+      "display_name": "postgres-next-starter",
+      "upstream_repository": "vercel/postgres-next-starter",
+      "evaluation_sets": [
+        "real-world-round1",
+        "static-analyzer-comparison"
+      ],
+      "scan_targets_during_evaluation": [
+        {
+          "evaluation_set": "real-world-round1",
+          "scan_target": "postgres-next-starter"
+        },
+        {
+          "evaluation_set": "static-analyzer-comparison",
+          "scan_target": "postgres-next-starter"
+        }
+      ],
+      "seeded_variants": [],
+      "notes": "Small low-complexity starter used as a sanity-check target."
+    },
+    {
+      "project_id": "saas-starter-kit",
+      "display_name": "saas-starter-kit",
+      "upstream_repository": "uxfris/saas-starter-kit",
+      "evaluation_sets": [
+        "real-world-round2"
+      ],
+      "scan_targets_during_evaluation": [
+        {
+          "evaluation_set": "real-world-round2",
+          "scan_target": "real-nextjs-projects-round2/saas-starter-kit"
+        }
+      ],
+      "seeded_variants": [],
+      "notes": "Round 2 target that produced one over-taint open-redirect triage finding."
+    },
+    {
+      "project_id": "papermark",
+      "display_name": "papermark",
+      "upstream_repository": "mfts/papermark",
+      "evaluation_sets": [
+        "real-world-round2"
+      ],
+      "scan_targets_during_evaluation": [
+        {
+          "evaluation_set": "real-world-round2",
+          "scan_target": "real-nextjs-projects-round2/papermark"
+        }
+      ],
+      "seeded_variants": [],
+      "notes": "Large round 2 stress-test target with no TypeScript/TSX Server Actions detected in the evaluated checkout."
+    },
+    {
+      "project_id": "documenso-openpage-api",
+      "display_name": "documenso-openpage-api",
+      "upstream_repository": "documenso/documenso",
+      "evaluation_sets": [
+        "real-world-round2"
+      ],
+      "scan_targets_during_evaluation": [
+        {
+          "evaluation_set": "real-world-round2",
+          "scan_target": "real-nextjs-projects-round2/documenso/apps/openpage-api"
+        }
+      ],
+      "seeded_variants": [],
+      "notes": "Round 2 evaluated subapp rather than the full monorepo."
+    },
+    {
+      "project_id": "dub-web",
+      "display_name": "dub-web",
+      "upstream_repository": "dubinc/dub",
+      "evaluation_sets": [
+        "real-world-round2"
+      ],
+      "scan_targets_during_evaluation": [
+        {
+          "evaluation_set": "real-world-round2",
+          "scan_target": "real-nextjs-projects-round2/dub/apps/web"
+        }
+      ],
+      "seeded_variants": [
+        "seeded-dub-idor"
+      ],
+      "notes": "Large production-grade Next.js subapp used in round 2 and later for a seeded IDOR experiment."
+    },
+    {
+      "project_id": "formbricks-web",
+      "display_name": "formbricks-web",
+      "upstream_repository": "formbricks/formbricks",
+      "evaluation_sets": [
+        "real-world-round2"
+      ],
+      "scan_targets_during_evaluation": [
+        {
+          "evaluation_set": "real-world-round2",
+          "scan_target": "real-nextjs-projects-round2/formbricks/apps/web"
+        }
+      ],
+      "seeded_variants": [
+        "seeded-formbricks-idor"
+      ],
+      "notes": "Large form-heavy subapp used in round 2 and later for a seeded IDOR experiment."
+    },
+    {
+      "project_id": "next-shadcn-dashboard-starter",
+      "display_name": "next-shadcn-dashboard-starter",
+      "upstream_repository": "Kiranism/next-shadcn-dashboard-starter",
+      "evaluation_sets": [
+        "round3-comparison"
+      ],
+      "scan_targets_during_evaluation": [
+        {
+          "evaluation_set": "round3-comparison",
+          "scan_target": "real-nextjs-projects-round3/next-shadcn-dashboard-starter"
+        }
+      ],
+      "seeded_variants": [],
+      "notes": "Round 3 comparison target; default CodeQL findings were generic script-level warnings."
+    },
+    {
+      "project_id": "skateshop",
+      "display_name": "skateshop",
+      "upstream_repository": "sadmann7/skateshop",
+      "evaluation_sets": [
+        "round3-comparison"
+      ],
+      "scan_targets_during_evaluation": [
+        {
+          "evaluation_set": "round3-comparison",
+          "scan_target": "real-nextjs-projects-round3/skateshop"
+        }
+      ],
+      "seeded_variants": [],
+      "notes": "Round 3 comparison target with many discovered and reachable Server Actions but no findings."
+    }
+  ]
+}

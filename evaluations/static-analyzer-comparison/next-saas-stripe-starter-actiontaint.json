@@ -1,0 +1,114 @@
+{
+  "backend_used": "local",
+  "boundaries": [],
+  "counts": {
+    "client_reachable_actions": 0,
+    "findings": 0,
+    "server_actions": 4
+  },
+  "findings": [],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "14.2.5",
+    "root": "next-saas-stripe-starter",
+    "source_file_count": 189
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 17,
+      "directive_kind": "file",
+      "end_line": 66,
+      "exported": true,
+      "file": "next-saas-stripe-starter/actions/generate-user-stripe.ts",
+      "name": "generateUserStripe",
+      "params": [
+        {
+          "index": 0,
+          "name": "priceId",
+          "raw": "priceId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "actions/generate-user-stripe.ts",
+      "server_action": true,
+      "start_line": 17
+    },
+    {
+      "async_function": true,
+      "body_start_line": 18,
+      "directive_kind": "file",
+      "end_line": 41,
+      "exported": true,
+      "file": "next-saas-stripe-starter/actions/open-customer-portal.ts",
+      "name": "openCustomerPortal",
+      "params": [
+        {
+          "index": 0,
+          "name": "userStripeId",
+          "raw": "userStripeId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "actions/open-customer-portal.ts",
+      "server_action": true,
+      "start_line": 16
+    },
+    {
+      "async_function": true,
+      "body_start_line": 12,
+      "directive_kind": "file",
+      "end_line": 38,
+      "exported": true,
+      "file": "next-saas-stripe-starter/actions/update-user-name.ts",
+      "name": "updateUserName",
+      "params": [
+        {
+          "index": 0,
+          "name": "userId",
+          "raw": "userId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "data",
+          "raw": "data: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "actions/update-user-name.ts",
+      "server_action": true,
+      "start_line": 12
+    },
+    {
+      "async_function": true,
+      "body_start_line": 14,
+      "directive_kind": "file",
+      "end_line": 40,
+      "exported": true,
+      "file": "next-saas-stripe-starter/actions/update-user-role.ts",
+      "name": "updateUserRole",
+      "params": [
+        {
+          "index": 0,
+          "name": "userId",
+          "raw": "userId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "data",
+          "raw": "data: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "actions/update-user-role.ts",
+      "server_action": true,
+      "start_line": 14
+    }
+  ],
+  "warnings": []
+}

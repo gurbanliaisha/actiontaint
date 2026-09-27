@@ -1,0 +1,331 @@
+{
+  "backend_used": "local",
+  "boundaries": [
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/ai.ts",
+      "function": "generateCompletion",
+      "function_key": "src/lib/actions/ai.ts::generateCompletion",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as generateCompletion(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as generateCompletion(...)",
+      "source_parameters": [
+        "formData"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "src/lib/actions/ai.ts",
+          "function_key": "src/lib/actions/ai.ts::generateCompletion",
+          "function_name": "generateCompletion",
+          "index": 0,
+          "kind": "form_data_parameter",
+          "parameter": "formData",
+          "reason": "formData is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/auth.ts",
+      "function": "login",
+      "function_key": "src/lib/actions/auth.ts::login",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as login(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as login(...)",
+      "source_parameters": [
+        "formData"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "src/lib/actions/auth.ts",
+          "function_key": "src/lib/actions/auth.ts::login",
+          "function_name": "login",
+          "index": 0,
+          "kind": "form_data_parameter",
+          "parameter": "formData",
+          "reason": "formData is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/auth.ts",
+      "function": "logout",
+      "function_key": "src/lib/actions/auth.ts::logout",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "used in <form action={logout}>"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "used in <form action={logout}>",
+      "source_parameters": [],
+      "source_specs": []
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/auth.ts",
+      "function": "signup",
+      "function_key": "src/lib/actions/auth.ts::signup",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as signup(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as signup(...)",
+      "source_parameters": [
+        "formData"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "src/lib/actions/auth.ts",
+          "function_key": "src/lib/actions/auth.ts::signup",
+          "function_name": "signup",
+          "index": 0,
+          "kind": "form_data_parameter",
+          "parameter": "formData",
+          "reason": "formData is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/billing.ts",
+      "function": "createCheckoutSession",
+      "function_key": "src/lib/actions/billing.ts::createCheckoutSession",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as createCheckoutSession(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as createCheckoutSession(...)",
+      "source_parameters": [
+        "planId"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/billing.ts",
+          "function_key": "src/lib/actions/billing.ts::createCheckoutSession",
+          "function_name": "createCheckoutSession",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "planId",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/billing.ts",
+      "function": "createPortalSession",
+      "function_key": "src/lib/actions/billing.ts::createPortalSession",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "used in <form action={createPortalSession}>"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "used in <form action={createPortalSession}>",
+      "source_parameters": [],
+      "source_specs": []
+    }
+  ],
+  "counts": {
+    "client_reachable_actions": 6,
+    "findings": 1,
+    "server_actions": 8
+  },
+  "findings": [
+    {
+      "explanation": "ActionTaint treats createCheckoutSession as an implicit HTTP endpoint because Next.js exposes client-reachable Server Actions. A client-controlled value flows into redirect.",
+      "rule_id": "actiontaint/open-redirect",
+      "severity": "MEDIUM",
+      "sink_file": "src/lib/actions/billing.ts",
+      "sink_line": 70,
+      "sink_snippet": "redirect(session.url);",
+      "source_function": "src/lib/actions/billing.ts::createCheckoutSession",
+      "source_parameter": "planId",
+      "taint_path": [
+        "planId",
+        "getPriceId(planId) -> priceId",
+        "await stripe.checkout.sessions.create({ customer: customerId, line_items: [ { price: priceId, quantity: 1, }, ], mode: \"subscription\", success_url: `${env.NEXT_PUBLIC_APP_URL}/billing?success=true`, cancel_url: `${env.NEXT_PUBLIC_APP_URL}/billing?canceled=true`, metadata: { userId: user.id, }, }) -> session",
+        "redirect(session.url);"
+      ],
+      "vulnerability_type": "Open Redirect"
+    }
+  ],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "16.0.1",
+    "root": "real-nextjs-projects-round2/saas-starter-kit",
+    "source_file_count": 40
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 9,
+      "directive_kind": "file",
+      "end_line": 67,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/saas-starter-kit/src/lib/actions/ai.ts",
+      "name": "generateCompletion",
+      "params": [
+        {
+          "index": 0,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "src/lib/actions/ai.ts",
+      "server_action": true,
+      "start_line": 9
+    },
+    {
+      "async_function": true,
+      "body_start_line": 69,
+      "directive_kind": "file",
+      "end_line": 83,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/saas-starter-kit/src/lib/actions/ai.ts",
+      "name": "getAIHistory",
+      "params": [],
+      "rel_path": "src/lib/actions/ai.ts",
+      "server_action": true,
+      "start_line": 69
+    },
+    {
+      "async_function": true,
+      "body_start_line": 10,
+      "directive_kind": "file",
+      "end_line": 38,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/saas-starter-kit/src/lib/actions/auth.ts",
+      "name": "login",
+      "params": [
+        {
+          "index": 0,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "src/lib/actions/auth.ts",
+      "server_action": true,
+      "start_line": 10
+    },
+    {
+      "async_function": true,
+      "body_start_line": 40,
+      "directive_kind": "file",
+      "end_line": 106,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/saas-starter-kit/src/lib/actions/auth.ts",
+      "name": "signup",
+      "params": [
+        {
+          "index": 0,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "src/lib/actions/auth.ts",
+      "server_action": true,
+      "start_line": 40
+    },
+    {
+      "async_function": true,
+      "body_start_line": 108,
+      "directive_kind": "file",
+      "end_line": 113,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/saas-starter-kit/src/lib/actions/auth.ts",
+      "name": "logout",
+      "params": [],
+      "rel_path": "src/lib/actions/auth.ts",
+      "server_action": true,
+      "start_line": 108
+    },
+    {
+      "async_function": true,
+      "body_start_line": 10,
+      "directive_kind": "file",
+      "end_line": 71,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/saas-starter-kit/src/lib/actions/billing.ts",
+      "name": "createCheckoutSession",
+      "params": [
+        {
+          "index": 0,
+          "name": "planId",
+          "raw": "planId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/actions/billing.ts",
+      "server_action": true,
+      "start_line": 10
+    },
+    {
+      "async_function": true,
+      "body_start_line": 73,
+      "directive_kind": "file",
+      "end_line": 94,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/saas-starter-kit/src/lib/actions/billing.ts",
+      "name": "createPortalSession",
+      "params": [],
+      "rel_path": "src/lib/actions/billing.ts",
+      "server_action": true,
+      "start_line": 73
+    },
+    {
+      "async_function": true,
+      "body_start_line": 96,
+      "directive_kind": "file",
+      "end_line": 108,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/saas-starter-kit/src/lib/actions/billing.ts",
+      "name": "getSubscriptionStatus",
+      "params": [],
+      "rel_path": "src/lib/actions/billing.ts",
+      "server_action": true,
+      "start_line": 96
+    }
+  ],
+  "warnings": []
+}

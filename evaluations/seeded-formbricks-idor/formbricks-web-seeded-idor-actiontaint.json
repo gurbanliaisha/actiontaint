@@ -1,0 +1,566 @@
+{
+  "backend_used": "codeql",
+  "boundaries": [
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "app/(app)/workspaces/[workspaceId]/surveys/[surveyId]/(analysis)/actions.ts",
+      "function": "revalidateSurveyIdPath",
+      "function_key": "app/(app)/workspaces/[workspaceId]/surveys/[surveyId]/(analysis)/actions.ts::revalidateSurveyIdPath",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as revalidateSurveyIdPath(...)",
+          "imported Server Action called from 'use client' file as revalidateSurveyIdPath(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as revalidateSurveyIdPath(...); imported Server Action called from 'use client' file as revalidateSurveyIdPath(...)",
+      "source_parameters": [
+        "workspaceId",
+        "surveyId"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "app/(app)/workspaces/[workspaceId]/surveys/[surveyId]/(analysis)/actions.ts",
+          "function_key": "app/(app)/workspaces/[workspaceId]/surveys/[surveyId]/(analysis)/actions.ts::revalidateSurveyIdPath",
+          "function_name": "revalidateSurveyIdPath",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "workspaceId",
+          "reason": "parameter is callable from a 'use client' component"
+        },
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "app/(app)/workspaces/[workspaceId]/surveys/[surveyId]/(analysis)/actions.ts",
+          "function_key": "app/(app)/workspaces/[workspaceId]/surveys/[surveyId]/(analysis)/actions.ts::revalidateSurveyIdPath",
+          "function_name": "revalidateSurveyIdPath",
+          "index": 1,
+          "kind": "client_argument",
+          "parameter": "surveyId",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "lib/actions/actiontaint-seeded-idor.ts",
+      "function": "actionTaintSeededDeleteDashboard",
+      "function_key": "lib/actions/actiontaint-seeded-idor.ts::actionTaintSeededDeleteDashboard",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "used in useActionState(actionTaintSeededDeleteDashboard, ...)",
+          "used in <form action={formAction}>"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "used in useActionState(actionTaintSeededDeleteDashboard, ...); used in <form action={formAction}>",
+      "source_parameters": [
+        "formData"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "lib/actions/actiontaint-seeded-idor.ts",
+          "function_key": "lib/actions/actiontaint-seeded-idor.ts::actionTaintSeededDeleteDashboard",
+          "function_name": "actionTaintSeededDeleteDashboard",
+          "index": 1,
+          "kind": "form_data_parameter",
+          "parameter": "formData",
+          "reason": "formData is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "client_reachable_actions": 2,
+    "findings": 1,
+    "server_actions": 20
+  },
+  "findings": [
+    {
+      "explanation": "Generated ActionTaint CodeQL query reported a framework-derived taint path.",
+      "rule_id": "js/actiontaint/generated-server-action-taint",
+      "severity": "HIGH",
+      "sink_file": "lib/actions/actiontaint-seeded-idor.ts",
+      "sink_line": 19,
+      "sink_snippet": "ActionTaint: Broken Authorization / IDOR from lib/actions/actiontaint-seeded-idor.ts::actionTaintSeededDeleteDashboard::formData to lib/actions/actiontaint-seeded-idor.ts::actionTaintSeededDeleteDashboard dangerous sink. Source is [client-controlled Server Action input](1).",
+      "source_function": "lib/actions/actiontaint-seeded-idor.ts::actionTaintSeededDeleteDashboard",
+      "source_parameter": "formData",
+      "taint_path": [
+        "lib/actions/actiontaint-seeded-idor.ts:17 formDat ... ardId\")",
+        "lib/actions/actiontaint-seeded-idor.ts:17 dashboardId",
+        "lib/actions/actiontaint-seeded-idor.ts:21 dashboardId",
+        "lib/actions/actiontaint-seeded-idor.ts:20 {/n      ... ,/n    }",
+        "lib/actions/actiontaint-seeded-idor.ts:19 {/n    w ...  },/n  }"
+      ],
+      "vulnerability_type": "Broken Authorization / IDOR"
+    }
+  ],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "16.2.6",
+    "root": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web",
+    "source_file_count": 2061
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 14,
+      "directive_kind": "file",
+      "end_line": 16,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/app/(app)/workspaces/[workspaceId]/surveys/[surveyId]/(analysis)/actions.ts",
+      "name": "revalidateSurveyIdPath",
+      "params": [
+        {
+          "index": 0,
+          "name": "workspaceId",
+          "raw": "workspaceId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "surveyId",
+          "raw": "surveyId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "app/(app)/workspaces/[workspaceId]/surveys/[surveyId]/(analysis)/actions.ts",
+      "server_action": true,
+      "start_line": 14
+    },
+    {
+      "async_function": true,
+      "body_start_line": 86,
+      "directive_kind": "file",
+      "end_line": 105,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/lib/actionClass/service.ts",
+      "name": "deleteActionClass",
+      "params": [
+        {
+          "index": 0,
+          "name": "actionClassId",
+          "raw": "actionClassId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "lib/actionClass/service.ts",
+      "server_action": true,
+      "start_line": 86
+    },
+    {
+      "async_function": true,
+      "body_start_line": 107,
+      "directive_kind": "file",
+      "end_line": 142,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/lib/actionClass/service.ts",
+      "name": "createActionClass",
+      "params": [
+        {
+          "index": 0,
+          "name": "actionClass",
+          "raw": "actionClass: TActionClassInput",
+          "type_hint": "TActionClassInput"
+        }
+      ],
+      "rel_path": "lib/actionClass/service.ts",
+      "server_action": true,
+      "start_line": 107
+    },
+    {
+      "async_function": true,
+      "body_start_line": 148,
+      "directive_kind": "file",
+      "end_line": 194,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/lib/actionClass/service.ts",
+      "name": "updateActionClass",
+      "params": [
+        {
+          "index": 0,
+          "name": "workspaceId",
+          "raw": "workspaceId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "actionClassId",
+          "raw": "actionClassId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 2,
+          "name": "inputActionClass",
+          "raw": "inputActionClass: TActionClassInput",
+          "type_hint": "TActionClassInput"
+        }
+      ],
+      "rel_path": "lib/actionClass/service.ts",
+      "server_action": true,
+      "start_line": 144
+    },
+    {
+      "async_function": true,
+      "body_start_line": 10,
+      "directive_kind": "file",
+      "end_line": 26,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/lib/actions/actiontaint-seeded-idor.ts",
+      "name": "actionTaintSeededDeleteDashboard",
+      "params": [
+        {
+          "index": 0,
+          "name": "_prevState",
+          "raw": "_prevState: unknown",
+          "type_hint": "unknown"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "lib/actions/actiontaint-seeded-idor.ts",
+      "server_action": true,
+      "start_line": 7
+    },
+    {
+      "async_function": true,
+      "body_start_line": 8,
+      "directive_kind": "file",
+      "end_line": 18,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/lib/membership/hooks/actions.ts",
+      "name": "getMembershipByUserIdOrganizationIdAction",
+      "params": [
+        {
+          "index": 0,
+          "name": "workspaceId",
+          "raw": "workspaceId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "userId",
+          "raw": "userId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "lib/membership/hooks/actions.ts",
+      "server_action": true,
+      "start_line": 8
+    },
+    {
+      "async_function": true,
+      "body_start_line": 20,
+      "directive_kind": "file",
+      "end_line": 27,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/lib/membership/hooks/actions.ts",
+      "name": "getMembershipRole",
+      "params": [
+        {
+          "index": 0,
+          "name": "userId",
+          "raw": "userId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "organizationId",
+          "raw": "organizationId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "lib/membership/hooks/actions.ts",
+      "server_action": true,
+      "start_line": 20
+    },
+    {
+      "async_function": true,
+      "body_start_line": 103,
+      "directive_kind": "file",
+      "end_line": 123,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/lib/utils/services.ts",
+      "name": "getLanguage",
+      "params": [
+        {
+          "index": 0,
+          "name": "languageId",
+          "raw": "languageId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "lib/utils/services.ts",
+      "server_action": true,
+      "start_line": 103
+    },
+    {
+      "async_function": true,
+      "body_start_line": 206,
+      "directive_kind": "file",
+      "end_line": 226,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/lib/utils/services.ts",
+      "name": "getWebhook",
+      "params": [
+        {
+          "index": 0,
+          "name": "id",
+          "raw": "id: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "lib/utils/services.ts",
+      "server_action": true,
+      "start_line": 206
+    },
+    {
+      "async_function": true,
+      "body_start_line": 262,
+      "directive_kind": "file",
+      "end_line": 268,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/lib/utils/services.ts",
+      "name": "isWorkspacePartOfOrganization",
+      "params": [
+        {
+          "index": 0,
+          "name": "organizationId",
+          "raw": "organizationId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "workspaceId",
+          "raw": "workspaceId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "lib/utils/services.ts",
+      "server_action": true,
+      "start_line": 259
+    },
+    {
+      "async_function": true,
+      "body_start_line": 270,
+      "directive_kind": "file",
+      "end_line": 276,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/lib/utils/services.ts",
+      "name": "isTeamPartOfOrganization",
+      "params": [
+        {
+          "index": 0,
+          "name": "organizationId",
+          "raw": "organizationId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "teamId",
+          "raw": "teamId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "lib/utils/services.ts",
+      "server_action": true,
+      "start_line": 270
+    },
+    {
+      "async_function": true,
+      "body_start_line": 26,
+      "directive_kind": "file",
+      "end_line": 41,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/modules/auth/actions/sign-out.ts",
+      "name": "logSignOutAction",
+      "params": [
+        {
+          "index": 0,
+          "name": "userId",
+          "raw": "userId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "userEmail",
+          "raw": "userEmail: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 2,
+          "name": "context",
+          "raw": "context: {\r\n    reason?:\r\n      | \"user_initiated\"\r\n      | \"account_deletion\"\r\n      | \"email_change\"\r\n      | \"session_timeout\"\r\n      | \"forced_logout\"\r\n      | \"password_reset\";\r\n    redirectUrl?: string;\r\n    organizationId?: string;\r\n  }",
+          "type_hint": "{\r\n    reason?:\r\n      | \"user_initiated\"\r\n      | \"account_deletion\"\r\n      | \"email_change\"\r\n      | \"session_timeout\"\r\n      | \"forced_logout\"\r\n      | \"password_reset\";\r\n    redirectUrl?: string;\r\n    organizationId?: string;\r\n  }"
+        }
+      ],
+      "rel_path": "modules/auth/actions/sign-out.ts",
+      "server_action": true,
+      "start_line": 12
+    },
+    {
+      "async_function": true,
+      "body_start_line": 85,
+      "directive_kind": "inline",
+      "end_line": 123,
+      "exported": false,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/modules/auth/invite/page.tsx",
+      "name": "createMembershipAction",
+      "params": [],
+      "rel_path": "modules/auth/invite/page.tsx",
+      "server_action": true,
+      "start_line": 85
+    },
+    {
+      "async_function": true,
+      "body_start_line": 26,
+      "directive_kind": "file",
+      "end_line": 43,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/modules/ee/auth/saml/lib/jackson.ts",
+      "name": "init",
+      "params": [],
+      "rel_path": "modules/ee/auth/saml/lib/jackson.ts",
+      "server_action": true,
+      "start_line": 26
+    },
+    {
+      "async_function": true,
+      "body_start_line": 29,
+      "directive_kind": "file",
+      "end_line": 73,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/modules/ee/mailing/lib/mailing-subscription.ts",
+      "name": "subscribeToMailingList",
+      "params": [
+        {
+          "index": 0,
+          "name": "{\r\n  email,\r\n  listId,\r\n}",
+          "raw": "{\r\n  email,\r\n  listId,\r\n}: TSubscribeToMailingListParams",
+          "type_hint": "TSubscribeToMailingListParams"
+        }
+      ],
+      "rel_path": "modules/ee/mailing/lib/mailing-subscription.ts",
+      "server_action": true,
+      "start_line": 26
+    },
+    {
+      "async_function": true,
+      "body_start_line": 85,
+      "directive_kind": "file",
+      "end_line": 91,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/modules/ee/mailing/lib/mailing-subscription.ts",
+      "name": "subscribeUserToMailingList",
+      "params": [
+        {
+          "index": 0,
+          "name": "{\r\n  email,\r\n  isFormbricksCloud,\r\n  subscribeToSecurityUpdates,\r\n  subscribeToProductUpdates,\r\n}",
+          "raw": "{\r\n  email,\r\n  isFormbricksCloud,\r\n  subscribeToSecurityUpdates,\r\n  subscribeToProductUpdates,\r\n}: {\r\n  email: TUserEmail;\r\n  isFormbricksCloud: boolean;\r\n  subscribeToSecurityUpdates?: boolean;\r\n  subscribeToProductUpdates?: boolean;\r\n}",
+          "type_hint": "{\r\n  email: TUserEmail;\r\n  isFormbricksCloud: boolean;\r\n  subscribeToSecurityUpdates?: boolean;\r\n  subscribeToProductUpdates?: boolean;\r\n}"
+        }
+      ],
+      "rel_path": "modules/ee/mailing/lib/mailing-subscription.ts",
+      "server_action": true,
+      "start_line": 75
+    },
+    {
+      "async_function": true,
+      "body_start_line": 26,
+      "directive_kind": "file",
+      "end_line": 36,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/modules/ee/role-management/actions.ts",
+      "name": "checkRoleManagementPermission",
+      "params": [
+        {
+          "index": 0,
+          "name": "organizationId",
+          "raw": "organizationId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "modules/ee/role-management/actions.ts",
+      "server_action": true,
+      "start_line": 26
+    },
+    {
+      "async_function": true,
+      "body_start_line": 17,
+      "directive_kind": "file",
+      "end_line": 29,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/modules/ee/whitelabel/email-customization/actions.ts",
+      "name": "checkWhiteLabelPermission",
+      "params": [
+        {
+          "index": 0,
+          "name": "organizationId",
+          "raw": "organizationId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "modules/ee/whitelabel/email-customization/actions.ts",
+      "server_action": true,
+      "start_line": 17
+    },
+    {
+      "async_function": true,
+      "body_start_line": 14,
+      "directive_kind": "file",
+      "end_line": 84,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/modules/workspaces/settings/(setup)/app-connection/page.tsx",
+      "name": "AppConnectionPage",
+      "params": [
+        {
+          "index": 0,
+          "name": "{ params }",
+          "raw": "{ params }: { params: Promise<{ workspaceId: string }> }",
+          "type_hint": "{ params: Promise<{ workspaceId: string }> }"
+        }
+      ],
+      "rel_path": "modules/workspaces/settings/(setup)/app-connection/page.tsx",
+      "server_action": true,
+      "start_line": 14
+    },
+    {
+      "async_function": true,
+      "body_start_line": 12,
+      "directive_kind": "file",
+      "end_line": 36,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web/modules/workspaces/settings/(setup)/user-actions/page.tsx",
+      "name": "UserActionsPage",
+      "params": [
+        {
+          "index": 0,
+          "name": "{ params }",
+          "raw": "{ params }: { params: Promise<{ workspaceId: string }> }",
+          "type_hint": "{ params: Promise<{ workspaceId: string }> }"
+        }
+      ],
+      "rel_path": "modules/workspaces/settings/(setup)/user-actions/page.tsx",
+      "server_action": true,
+      "start_line": 12
+    }
+  ],
+  "warnings": [
+    "CodeQL completed in 230.32s."
+  ]
+}

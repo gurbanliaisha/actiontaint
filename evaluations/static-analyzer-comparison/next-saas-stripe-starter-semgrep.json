@@ -1,0 +1,147 @@
+{
+  "engine_requested": "OSS",
+  "errors": [
+    {
+      "code": 3,
+      "level": "warn",
+      "message": "Syntax error at line next-saas-stripe-starter/components/docs/sidebar-nav.tsx:11:\n `=> void` was unexpected",
+      "path": "next-saas-stripe-starter/components/docs/sidebar-nav.tsx",
+      "spans": [
+        {
+          "end": {
+            "col": 30,
+            "line": 11,
+            "offset": 7
+          },
+          "file": "next-saas-stripe-starter/components/docs/sidebar-nav.tsx",
+          "start": {
+            "col": 23,
+            "line": 11,
+            "offset": 0
+          }
+        },
+        {
+          "end": {
+            "col": 30,
+            "line": 41,
+            "offset": 7
+          },
+          "file": "next-saas-stripe-starter/components/docs/sidebar-nav.tsx",
+          "start": {
+            "col": 23,
+            "line": 41,
+            "offset": 0
+          }
+        }
+      ],
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "end": {
+              "col": 30,
+              "line": 11,
+              "offset": 7
+            },
+            "path": "next-saas-stripe-starter/components/docs/sidebar-nav.tsx",
+            "start": {
+              "col": 23,
+              "line": 11,
+              "offset": 0
+            }
+          },
+          {
+            "end": {
+              "col": 30,
+              "line": 41,
+              "offset": 7
+            },
+            "path": "next-saas-stripe-starter/components/docs/sidebar-nav.tsx",
+            "start": {
+              "col": 23,
+              "line": 41,
+              "offset": 0
+            }
+          }
+        ]
+      ]
+    }
+  ],
+  "paths": {
+    "scanned_count": 252
+  },
+  "profiling_results": [],
+  "results": [],
+  "skipped_rules": [],
+  "time": {
+    "fixpoint_timeouts": [],
+    "matching_time": {
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "total_time": 0.0,
+      "very_slow_rules_on_files": [],
+      "very_slow_stats": {
+        "count_ratio": 0.0,
+        "time_ratio": 0.0
+      }
+    },
+    "max_memory_bytes": 1193755264,
+    "parsing_time": {
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "total_time": 0.0,
+      "very_slow_files": [],
+      "very_slow_stats": {
+        "count_ratio": 0.0,
+        "time_ratio": 0.0
+      }
+    },
+    "prefiltering": {
+      "file_level_time": 0.0,
+      "project_level_time": 0.0,
+      "rules_matched_ratio": 0.041871978702038716,
+      "rules_selected_ratio": 0.041871978702038716,
+      "rules_with_file_prefilters_ratio": 0.985661240979893,
+      "rules_with_project_prefilters_ratio": 0.0
+    },
+    "profiling_times": {
+      "config_time": 3.1016716957092285,
+      "core_time": 6.747373819351196,
+      "ignores_time": 0.0015192031860351562,
+      "total_time": 9.866611003875732
+    },
+    "rules": [],
+    "rules_parse_time": 0.4051351547241211,
+    "scanning_time": {
+      "per_file_time": {
+        "mean": 0.010283488833326903,
+        "std_dev": 0.0021538710124183198
+      },
+      "total_time": 7.219009160995483,
+      "very_slow_files": [],
+      "very_slow_stats": {
+        "count_ratio": 0.0,
+        "time_ratio": 0.0
+      }
+    },
+    "tainting_time": {
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "total_time": 0.0,
+      "very_slow_rules_on_defs": [],
+      "very_slow_stats": {
+        "count_ratio": 0.0,
+        "time_ratio": 0.0
+      }
+    },
+    "targets": [],
+    "total_bytes": 0
+  },
+  "version": "1.163.0"
+}

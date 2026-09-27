@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "actiontaint"
+version = "0.1.0"
+description = "Framework-aware static analysis for Next.js Server Actions."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Aisha Gurbanli" }]
+dependencies = []
+
+[project.scripts]
+actiontaint = "actiontaint.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["actiontaint*"]
+
+[tool.setuptools.package-data]
+actiontaint = ["parsers/*.cjs"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

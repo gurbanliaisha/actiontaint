@@ -1,0 +1,1062 @@
+{
+  "backend_used": "codeql",
+  "boundaries": [
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/cart.ts",
+      "function": "addToCart",
+      "function_key": "src/lib/actions/cart.ts::addToCart",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as addToCart(...)",
+          "imported Server Action called from 'use client' file as addToCart(...)",
+          "imported Server Action called from 'use client' file as addToCart(...)",
+          "imported Server Action called from 'use client' file as addToCart(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as addToCart(...); imported Server Action called from 'use client' file as addToCart(...); imported Server Action called from 'use client' file as addToCart(...); imported Server Action called from 'use client' file as addToCart(...)",
+      "source_parameters": [
+        "rawInput"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/cart.ts",
+          "function_key": "src/lib/actions/cart.ts::addToCart",
+          "function_name": "addToCart",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "rawInput",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/cart.ts",
+      "function": "deleteCartItem",
+      "function_key": "src/lib/actions/cart.ts::deleteCartItem",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as deleteCartItem(...)",
+          "imported Server Action called from 'use client' file as deleteCartItem(...)",
+          "imported Server Action called from 'use client' file as deleteCartItem(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as deleteCartItem(...); imported Server Action called from 'use client' file as deleteCartItem(...); imported Server Action called from 'use client' file as deleteCartItem(...)",
+      "source_parameters": [
+        "input"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/cart.ts",
+          "function_key": "src/lib/actions/cart.ts::deleteCartItem",
+          "function_name": "deleteCartItem",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "input",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/cart.ts",
+      "function": "updateCartItem",
+      "function_key": "src/lib/actions/cart.ts::updateCartItem",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as updateCartItem(...)",
+          "imported Server Action called from 'use client' file as updateCartItem(...)",
+          "imported Server Action called from 'use client' file as updateCartItem(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as updateCartItem(...); imported Server Action called from 'use client' file as updateCartItem(...); imported Server Action called from 'use client' file as updateCartItem(...)",
+      "source_parameters": [
+        "rawInput"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/cart.ts",
+          "function_key": "src/lib/actions/cart.ts::updateCartItem",
+          "function_name": "updateCartItem",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "rawInput",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/notification.ts",
+      "function": "updateNotification",
+      "function_key": "src/lib/actions/notification.ts::updateNotification",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as updateNotification(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as updateNotification(...)",
+      "source_parameters": [
+        "input"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/notification.ts",
+          "function_key": "src/lib/actions/notification.ts::updateNotification",
+          "function_name": "updateNotification",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "input",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/product.ts",
+      "function": "addProduct",
+      "function_key": "src/lib/actions/product.ts::addProduct",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as addProduct(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as addProduct(...)",
+      "source_parameters": [
+        "input"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/product.ts",
+          "function_key": "src/lib/actions/product.ts::addProduct",
+          "function_name": "addProduct",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "input",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/product.ts",
+      "function": "deleteProduct",
+      "function_key": "src/lib/actions/product.ts::deleteProduct",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as deleteProduct(...)",
+          "imported Server Action called from 'use client' file as deleteProduct(...)",
+          "imported Server Action called from 'use client' file as deleteProduct(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as deleteProduct(...); imported Server Action called from 'use client' file as deleteProduct(...); imported Server Action called from 'use client' file as deleteProduct(...)",
+      "source_parameters": [
+        "input"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/product.ts",
+          "function_key": "src/lib/actions/product.ts::deleteProduct",
+          "function_name": "deleteProduct",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "input",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/product.ts",
+      "function": "filterProducts",
+      "function_key": "src/lib/actions/product.ts::filterProducts",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as filterProducts(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as filterProducts(...)",
+      "source_parameters": [
+        "{ query }"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/product.ts",
+          "function_key": "src/lib/actions/product.ts::filterProducts",
+          "function_name": "filterProducts",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "{ query }",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/product.ts",
+      "function": "updateProduct",
+      "function_key": "src/lib/actions/product.ts::updateProduct",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as updateProduct(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as updateProduct(...)",
+      "source_parameters": [
+        "input"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/product.ts",
+          "function_key": "src/lib/actions/product.ts::updateProduct",
+          "function_name": "updateProduct",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "input",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/product.ts",
+      "function": "updateProductRating",
+      "function_key": "src/lib/actions/product.ts::updateProductRating",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as updateProductRating(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as updateProductRating(...)",
+      "source_parameters": [
+        "input"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/product.ts",
+          "function_key": "src/lib/actions/product.ts::updateProductRating",
+          "function_name": "updateProductRating",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "input",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/store.ts",
+      "function": "createStore",
+      "function_key": "src/lib/actions/store.ts::createStore",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as createStore(...)",
+          "imported Server Action called from 'use client' file as createStore(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as createStore(...); imported Server Action called from 'use client' file as createStore(...)",
+      "source_parameters": [
+        "input"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/store.ts",
+          "function_key": "src/lib/actions/store.ts::createStore",
+          "function_name": "createStore",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "input",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/store.ts",
+      "function": "updateStore",
+      "function_key": "src/lib/actions/store.ts::updateStore",
+      "input_semantics": {
+        "bind_arguments": [
+          {
+            "classification": "possibly_tainted",
+            "expression": "store.id",
+            "reason": "non-literal bind argument in a UI component",
+            "target_parameter": "storeId"
+          }
+        ],
+        "callsite_reasons": [
+          "used in <form action={updateStore.bind(null, store.id)}>"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "used in <form action={updateStore.bind(null, store.id)}>",
+      "source_parameters": [
+        "storeId",
+        "fd"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": "store.id",
+          "file": "src/lib/actions/store.ts",
+          "function_key": "src/lib/actions/store.ts::updateStore",
+          "function_name": "updateStore",
+          "index": 0,
+          "kind": "bind_possibly_tainted",
+          "parameter": "storeId",
+          "reason": "non-literal bind argument in a UI component"
+        },
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "src/lib/actions/store.ts",
+          "function_key": "src/lib/actions/store.ts::updateStore",
+          "function_name": "updateStore",
+          "index": 1,
+          "kind": "form_data_parameter",
+          "parameter": "fd",
+          "reason": "fd is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/stripe.ts",
+      "function": "createAccountLink",
+      "function_key": "src/lib/actions/stripe.ts::createAccountLink",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as createAccountLink(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as createAccountLink(...)",
+      "source_parameters": [
+        "input"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/stripe.ts",
+          "function_key": "src/lib/actions/stripe.ts::createAccountLink",
+          "function_name": "createAccountLink",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "input",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "src/lib/actions/stripe.ts",
+      "function": "managePlan",
+      "function_key": "src/lib/actions/stripe.ts::managePlan",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as managePlan(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as managePlan(...)",
+      "source_parameters": [
+        "input"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "src/lib/actions/stripe.ts",
+          "function_key": "src/lib/actions/stripe.ts::managePlan",
+          "function_name": "managePlan",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "input",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "client_reachable_actions": 13,
+    "findings": 0,
+    "server_actions": 31
+  },
+  "findings": [],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "14.2.5",
+    "root": "real-nextjs-projects-round3/skateshop",
+    "source_file_count": 312
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 20,
+      "directive_kind": "file",
+      "end_line": 84,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/cart.ts",
+      "name": "getCart",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input?: {\r\n  storeId: string\r\n}",
+          "type_hint": "{\r\n  storeId: string\r\n}"
+        }
+      ],
+      "rel_path": "src/lib/actions/cart.ts",
+      "server_action": true,
+      "start_line": 18
+    },
+    {
+      "async_function": true,
+      "body_start_line": 86,
+      "directive_kind": "file",
+      "end_line": 110,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/cart.ts",
+      "name": "getUniqueStoreIds",
+      "params": [],
+      "rel_path": "src/lib/actions/cart.ts",
+      "server_action": true,
+      "start_line": 86
+    },
+    {
+      "async_function": true,
+      "body_start_line": 112,
+      "directive_kind": "file",
+      "end_line": 126,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/cart.ts",
+      "name": "getCartItems",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: { cartId?: string }",
+          "type_hint": "{ cartId?: string }"
+        }
+      ],
+      "rel_path": "src/lib/actions/cart.ts",
+      "server_action": true,
+      "start_line": 112
+    },
+    {
+      "async_function": true,
+      "body_start_line": 128,
+      "directive_kind": "file",
+      "end_line": 237,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/cart.ts",
+      "name": "addToCart",
+      "params": [
+        {
+          "index": 0,
+          "name": "rawInput",
+          "raw": "rawInput: z.infer<typeof cartItemSchema>",
+          "type_hint": "z.infer<typeof cartItemSchema>"
+        }
+      ],
+      "rel_path": "src/lib/actions/cart.ts",
+      "server_action": true,
+      "start_line": 128
+    },
+    {
+      "async_function": true,
+      "body_start_line": 239,
+      "directive_kind": "file",
+      "end_line": 293,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/cart.ts",
+      "name": "updateCartItem",
+      "params": [
+        {
+          "index": 0,
+          "name": "rawInput",
+          "raw": "rawInput: z.infer<typeof cartItemSchema>",
+          "type_hint": "z.infer<typeof cartItemSchema>"
+        }
+      ],
+      "rel_path": "src/lib/actions/cart.ts",
+      "server_action": true,
+      "start_line": 239
+    },
+    {
+      "async_function": true,
+      "body_start_line": 295,
+      "directive_kind": "file",
+      "end_line": 319,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/cart.ts",
+      "name": "deleteCart",
+      "params": [],
+      "rel_path": "src/lib/actions/cart.ts",
+      "server_action": true,
+      "start_line": 295
+    },
+    {
+      "async_function": true,
+      "body_start_line": 323,
+      "directive_kind": "file",
+      "end_line": 356,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/cart.ts",
+      "name": "deleteCartItem",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: z.infer<typeof deleteCartItemSchema>",
+          "type_hint": "z.infer<typeof deleteCartItemSchema>"
+        }
+      ],
+      "rel_path": "src/lib/actions/cart.ts",
+      "server_action": true,
+      "start_line": 321
+    },
+    {
+      "async_function": true,
+      "body_start_line": 360,
+      "directive_kind": "file",
+      "end_line": 400,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/cart.ts",
+      "name": "deleteCartItems",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: z.infer<typeof deleteCartItemsSchema>",
+          "type_hint": "z.infer<typeof deleteCartItemsSchema>"
+        }
+      ],
+      "rel_path": "src/lib/actions/cart.ts",
+      "server_action": true,
+      "start_line": 358
+    },
+    {
+      "async_function": true,
+      "body_start_line": 15,
+      "directive_kind": "file",
+      "end_line": 65,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/notification.ts",
+      "name": "updateNotification",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: UpdateNotificationSchema",
+          "type_hint": "UpdateNotificationSchema"
+        }
+      ],
+      "rel_path": "src/lib/actions/notification.ts",
+      "server_action": true,
+      "start_line": 15
+    },
+    {
+      "async_function": true,
+      "body_start_line": 44,
+      "directive_kind": "file",
+      "end_line": 198,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/order.ts",
+      "name": "getOrderLineItems",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: z.infer<typeof getOrderLineItemsSchema> & {\r\n    paymentIntent?: Stripe.Response<Stripe.PaymentIntent> | null\r\n  }",
+          "type_hint": "z.infer<typeof getOrderLineItemsSchema> & {\r\n    paymentIntent?: Stripe.Response<Stripe.PaymentIntent> | null\r\n  }"
+        }
+      ],
+      "rel_path": "src/lib/actions/order.ts",
+      "server_action": true,
+      "start_line": 40
+    },
+    {
+      "async_function": true,
+      "body_start_line": 203,
+      "directive_kind": "file",
+      "end_line": 308,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/order.ts",
+      "name": "getStoreOrders",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: {\r\n  storeId: string\r\n  searchParams: SearchParams\r\n}",
+          "type_hint": "{\r\n  storeId: string\r\n  searchParams: SearchParams\r\n}"
+        }
+      ],
+      "rel_path": "src/lib/actions/order.ts",
+      "server_action": true,
+      "start_line": 200
+    },
+    {
+      "async_function": true,
+      "body_start_line": 314,
+      "directive_kind": "file",
+      "end_line": 337,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/order.ts",
+      "name": "getOrderCount",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: {\r\n  storeId: string\r\n  fromDay?: Date\r\n  toDay?: Date\r\n}",
+          "type_hint": "{\r\n  storeId: string\r\n  fromDay?: Date\r\n  toDay?: Date\r\n}"
+        }
+      ],
+      "rel_path": "src/lib/actions/order.ts",
+      "server_action": true,
+      "start_line": 310
+    },
+    {
+      "async_function": true,
+      "body_start_line": 343,
+      "directive_kind": "file",
+      "end_line": 371,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/order.ts",
+      "name": "getSaleCount",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: {\r\n  storeId: string\r\n  fromDay?: Date\r\n  toDay?: Date\r\n}",
+          "type_hint": "{\r\n  storeId: string\r\n  fromDay?: Date\r\n  toDay?: Date\r\n}"
+        }
+      ],
+      "rel_path": "src/lib/actions/order.ts",
+      "server_action": true,
+      "start_line": 339
+    },
+    {
+      "async_function": true,
+      "body_start_line": 377,
+      "directive_kind": "file",
+      "end_line": 409,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/order.ts",
+      "name": "getSales",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: {\r\n  storeId: string\r\n  fromDay?: Date\r\n  toDay?: Date\r\n}",
+          "type_hint": "{\r\n  storeId: string\r\n  fromDay?: Date\r\n  toDay?: Date\r\n}"
+        }
+      ],
+      "rel_path": "src/lib/actions/order.ts",
+      "server_action": true,
+      "start_line": 373
+    },
+    {
+      "async_function": true,
+      "body_start_line": 417,
+      "directive_kind": "file",
+      "end_line": 478,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/order.ts",
+      "name": "getCustomers",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: {\r\n  storeId: string\r\n  limit: number\r\n  offset: number\r\n  fromDay?: Date\r\n  toDay?: Date\r\n}",
+          "type_hint": "{\r\n  storeId: string\r\n  limit: number\r\n  offset: number\r\n  fromDay?: Date\r\n  toDay?: Date\r\n}"
+        }
+      ],
+      "rel_path": "src/lib/actions/order.ts",
+      "server_action": true,
+      "start_line": 411
+    },
+    {
+      "async_function": true,
+      "body_start_line": 17,
+      "directive_kind": "file",
+      "end_line": 54,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/product.ts",
+      "name": "filterProducts",
+      "params": [
+        {
+          "index": 0,
+          "name": "{ query }",
+          "raw": "{ query }: { query: string }",
+          "type_hint": "{ query: string }"
+        }
+      ],
+      "rel_path": "src/lib/actions/product.ts",
+      "server_action": true,
+      "start_line": 17
+    },
+    {
+      "async_function": true,
+      "body_start_line": 61,
+      "directive_kind": "file",
+      "end_line": 91,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/product.ts",
+      "name": "addProduct",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: Omit<CreateProductSchema, \"images\"> & {\r\n    storeId: string\r\n    images: StoredFile[]\r\n  }",
+          "type_hint": "Omit<CreateProductSchema, \"images\"> & {\r\n    storeId: string\r\n    images: StoredFile[]\r\n  }"
+        }
+      ],
+      "rel_path": "src/lib/actions/product.ts",
+      "server_action": true,
+      "start_line": 56
+    },
+    {
+      "async_function": true,
+      "body_start_line": 95,
+      "directive_kind": "file",
+      "end_line": 128,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/product.ts",
+      "name": "updateProduct",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: z.infer<typeof createProductSchema> & { id: string; storeId: string }",
+          "type_hint": "z.infer<typeof createProductSchema> & { id: string; storeId: string }"
+        }
+      ],
+      "rel_path": "src/lib/actions/product.ts",
+      "server_action": true,
+      "start_line": 93
+    },
+    {
+      "async_function": true,
+      "body_start_line": 132,
+      "directive_kind": "file",
+      "end_line": 163,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/product.ts",
+      "name": "updateProductRating",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: z.infer<typeof updateProductRatingSchema>",
+          "type_hint": "z.infer<typeof updateProductRatingSchema>"
+        }
+      ],
+      "rel_path": "src/lib/actions/product.ts",
+      "server_action": true,
+      "start_line": 130
+    },
+    {
+      "async_function": true,
+      "body_start_line": 165,
+      "directive_kind": "file",
+      "end_line": 195,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/product.ts",
+      "name": "deleteProduct",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: { id: string; storeId: string }",
+          "type_hint": "{ id: string; storeId: string }"
+        }
+      ],
+      "rel_path": "src/lib/actions/product.ts",
+      "server_action": true,
+      "start_line": 165
+    },
+    {
+      "async_function": true,
+      "body_start_line": 23,
+      "directive_kind": "file",
+      "end_line": 52,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/store.ts",
+      "name": "createStore",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: CreateStoreSchema & { userId: string }",
+          "type_hint": "CreateStoreSchema & { userId: string }"
+        }
+      ],
+      "rel_path": "src/lib/actions/store.ts",
+      "server_action": true,
+      "start_line": 21
+    },
+    {
+      "async_function": true,
+      "body_start_line": 54,
+      "directive_kind": "file",
+      "end_line": 93,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/store.ts",
+      "name": "updateStore",
+      "params": [
+        {
+          "index": 0,
+          "name": "storeId",
+          "raw": "storeId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "fd",
+          "raw": "fd: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "src/lib/actions/store.ts",
+      "server_action": true,
+      "start_line": 54
+    },
+    {
+      "async_function": true,
+      "body_start_line": 95,
+      "directive_kind": "file",
+      "end_line": 120,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/store.ts",
+      "name": "deleteStore",
+      "params": [
+        {
+          "index": 0,
+          "name": "storeId",
+          "raw": "storeId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/actions/store.ts",
+      "server_action": true,
+      "start_line": 95
+    },
+    {
+      "async_function": true,
+      "body_start_line": 33,
+      "directive_kind": "file",
+      "end_line": 66,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/stripe.ts",
+      "name": "getPlans",
+      "params": [],
+      "rel_path": "src/lib/actions/stripe.ts",
+      "server_action": true,
+      "start_line": 33
+    },
+    {
+      "async_function": true,
+      "body_start_line": 71,
+      "directive_kind": "file",
+      "end_line": 124,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/stripe.ts",
+      "name": "getPlan",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: {\r\n  userId: string\r\n}",
+          "type_hint": "{\r\n  userId: string\r\n}"
+        }
+      ],
+      "rel_path": "src/lib/actions/stripe.ts",
+      "server_action": true,
+      "start_line": 69
+    },
+    {
+      "async_function": true,
+      "body_start_line": 129,
+      "directive_kind": "file",
+      "end_line": 201,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/stripe.ts",
+      "name": "getStripeAccount",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: z.infer<typeof getStripeAccountSchema>",
+          "type_hint": "z.infer<typeof getStripeAccountSchema>"
+        }
+      ],
+      "rel_path": "src/lib/actions/stripe.ts",
+      "server_action": true,
+      "start_line": 127
+    },
+    {
+      "async_function": true,
+      "body_start_line": 207,
+      "directive_kind": "file",
+      "end_line": 248,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/stripe.ts",
+      "name": "getPaymentIntents",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: z.infer<typeof getPaymentIntentsSchema>",
+          "type_hint": "z.infer<typeof getPaymentIntentsSchema>"
+        }
+      ],
+      "rel_path": "src/lib/actions/stripe.ts",
+      "server_action": true,
+      "start_line": 205
+    },
+    {
+      "async_function": true,
+      "body_start_line": 254,
+      "directive_kind": "file",
+      "end_line": 303,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/stripe.ts",
+      "name": "getPaymentIntent",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: z.infer<typeof getPaymentIntentSchema>",
+          "type_hint": "z.infer<typeof getPaymentIntentSchema>"
+        }
+      ],
+      "rel_path": "src/lib/actions/stripe.ts",
+      "server_action": true,
+      "start_line": 252
+    },
+    {
+      "async_function": true,
+      "body_start_line": 306,
+      "directive_kind": "file",
+      "end_line": 366,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/stripe.ts",
+      "name": "managePlan",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: z.infer<typeof managePlanSchema>",
+          "type_hint": "z.infer<typeof managePlanSchema>"
+        }
+      ],
+      "rel_path": "src/lib/actions/stripe.ts",
+      "server_action": true,
+      "start_line": 306
+    },
+    {
+      "async_function": true,
+      "body_start_line": 371,
+      "directive_kind": "file",
+      "end_line": 434,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/stripe.ts",
+      "name": "createAccountLink",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: z.infer<typeof getStripeAccountSchema>",
+          "type_hint": "z.infer<typeof getStripeAccountSchema>"
+        }
+      ],
+      "rel_path": "src/lib/actions/stripe.ts",
+      "server_action": true,
+      "start_line": 369
+    },
+    {
+      "async_function": true,
+      "body_start_line": 440,
+      "directive_kind": "file",
+      "end_line": 539,
+      "exported": true,
+      "file": "real-nextjs-projects-round3/skateshop/src/lib/actions/stripe.ts",
+      "name": "createPaymentIntent",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: z.infer<typeof createPaymentIntentSchema>",
+          "type_hint": "z.infer<typeof createPaymentIntentSchema>"
+        }
+      ],
+      "rel_path": "src/lib/actions/stripe.ts",
+      "server_action": true,
+      "start_line": 438
+    }
+  ],
+  "warnings": [
+    "CodeQL completed in 186.66s."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "description": "Regression fixture covering sink precision (false-positive guards), extra reachability patterns, and every sink class. Not part of the paper benchmark suites.",
+  "expected_actions": 17,
+  "expected_reachable": 16,
+  "expected_findings": [
+    { "type": "SQL Injection", "source_function": "arrowAction" },
+    { "type": "Broken Authorization / IDOR", "source_function": "supabaseDelete" },
+    { "type": "SSRF", "source_function": "axiosBare" },
+    { "type": "Command Injection", "source_function": "cmd" },
+    { "type": "SQL Injection", "source_function": "bindInline" },
+    { "type": "SQL Injection", "source_function": "reexported" },
+    { "type": "SQL Injection", "source_function": "untypedParam" },
+    { "type": "SQL Injection", "source_function": "nsAction" },
+    { "type": "SQL Injection", "source_function": "default" },
+    { "type": "SQL Injection", "source_function": "closureAction" }
+  ],
+  "must_not_report": ["regexExec", "mapDelete", "pgObject", "redirectPrefix", "fetchFixedHost", "whereVar", "unusedAction"]
+}

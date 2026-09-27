@@ -1,0 +1,21 @@
+{
+  "backend_used": "local",
+  "boundaries": [],
+  "counts": {
+    "client_reachable_actions": 0,
+    "findings": 0,
+    "server_actions": 0
+  },
+  "findings": [],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "16.2.6",
+    "root": "real-nextjs-projects-round2/documenso/apps/openpage-api",
+    "source_file_count": 26
+  },
+  "server_actions": [],
+  "warnings": []
+}

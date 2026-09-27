@@ -1,0 +1,280 @@
+{
+  "engine_requested": "OSS",
+  "errors": [
+    {
+      "code": 3,
+      "level": "warn",
+      "message": "Syntax error at line nextjs-auth-starter/app/setup/setup-steps.tsx:11:\n `& Prisma Postgres Auth\r\n          Starter:` was unexpected",
+      "path": "nextjs-auth-starter/app/setup/setup-steps.tsx",
+      "spans": [
+        {
+          "end": {
+            "col": 19,
+            "line": 12,
+            "offset": 42
+          },
+          "file": "nextjs-auth-starter/app/setup/setup-steps.tsx",
+          "start": {
+            "col": 53,
+            "line": 11,
+            "offset": 0
+          }
+        }
+      ],
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "end": {
+              "col": 19,
+              "line": 12,
+              "offset": 42
+            },
+            "path": "nextjs-auth-starter/app/setup/setup-steps.tsx",
+            "start": {
+              "col": 53,
+              "line": 11,
+              "offset": 0
+            }
+          }
+        ]
+      ]
+    }
+  ],
+  "paths": {
+    "scanned_count": 35
+  },
+  "profiling_results": [],
+  "results": [
+    {
+      "check_id": "generic.secrets.security.detected-generic-api-key.detected-generic-api-key",
+      "end": {
+        "col": 105,
+        "line": 80,
+        "offset": 3027
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "message": "Generic API Key detected",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "likelihood": "LOW",
+          "owasp": [
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "references": [
+            "https://github.com/dxa4481/truffleHogRegexes/blob/master/truffleHogRegexes/regexes.json"
+          ],
+          "shortlink": "https://sg.run/qxj8",
+          "source": "https://semgrep.dev/r/generic.secrets.security.detected-generic-api-key.detected-generic-api-key",
+          "source-rule-url": "https://github.com/dxa4481/truffleHogRegexes/blob/master/truffleHogRegexes/regexes.json",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "secrets"
+          ],
+          "vulnerability_class": [
+            "Hard-coded Secrets"
+          ]
+        },
+        "severity": "ERROR",
+        "validation_state": "NO_VALIDATOR"
+      },
+      "path": "nextjs-auth-starter/README.md",
+      "start": {
+        "col": 61,
+        "line": 80,
+        "offset": 2983
+      }
+    },
+    {
+      "check_id": "generic.secrets.security.detected-jwt-token.detected-jwt-token",
+      "end": {
+        "col": 355,
+        "line": 80,
+        "offset": 3277
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "message": "JWT token detected",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-321: Use of Hard-coded Cryptographic Key"
+          ],
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "likelihood": "LOW",
+          "owasp": [
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "references": [
+            "https://semgrep.dev/blog/2020/hardcoded-secrets-unverified-tokens-and-other-common-jwt-mistakes/"
+          ],
+          "shortlink": "https://sg.run/05N5",
+          "source": "https://semgrep.dev/r/generic.secrets.security.detected-jwt-token.detected-jwt-token",
+          "source-rule-url": "https://github.com/Yelp/detect-secrets/blob/master/detect_secrets/plugins/jwt.py",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "secrets",
+            "jwt"
+          ],
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ]
+        },
+        "severity": "ERROR",
+        "validation_state": "NO_VALIDATOR"
+      },
+      "path": "nextjs-auth-starter/README.md",
+      "start": {
+        "col": 69,
+        "line": 80,
+        "offset": 2991
+      }
+    },
+    {
+      "check_id": "generic.secrets.security.detected-generic-secret.detected-generic-secret",
+      "end": {
+        "col": 57,
+        "line": 82,
+        "offset": 3381
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "message": "Generic Secret detected",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "likelihood": "LOW",
+          "owasp": [
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+          ],
+          "shortlink": "https://sg.run/l2o5",
+          "source": "https://semgrep.dev/r/generic.secrets.security.detected-generic-secret.detected-generic-secret",
+          "source-rule-url": "https://github.com/dxa4481/truffleHogRegexes/blob/master/truffleHogRegexes/regexes.json",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "secrets"
+          ],
+          "vulnerability_class": [
+            "Hard-coded Secrets"
+          ]
+        },
+        "severity": "ERROR",
+        "validation_state": "NO_VALIDATOR"
+      },
+      "path": "nextjs-auth-starter/README.md",
+      "start": {
+        "col": 6,
+        "line": 82,
+        "offset": 3330
+      }
+    }
+  ],
+  "skipped_rules": [],
+  "time": {
+    "fixpoint_timeouts": [],
+    "matching_time": {
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "total_time": 0.0,
+      "very_slow_rules_on_files": [],
+      "very_slow_stats": {
+        "count_ratio": 0.0,
+        "time_ratio": 0.0
+      }
+    },
+    "max_memory_bytes": 1124467136,
+    "parsing_time": {
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "total_time": 0.0,
+      "very_slow_files": [],
+      "very_slow_stats": {
+        "count_ratio": 0.0,
+        "time_ratio": 0.0
+      }
+    },
+    "prefiltering": {
+      "file_level_time": 0.0,
+      "project_level_time": 0.0,
+      "rules_matched_ratio": 0.03505082369435682,
+      "rules_selected_ratio": 0.03505082369435682,
+      "rules_with_file_prefilters_ratio": 0.9856291622853137,
+      "rules_with_project_prefilters_ratio": 0.0
+    },
+    "profiling_times": {
+      "config_time": 1.4227824211120605,
+      "core_time": 1.487931728363037,
+      "ignores_time": 0.0017178058624267578,
+      "total_time": 2.9278483390808105
+    },
+    "rules": [],
+    "rules_parse_time": 0.4041781425476074,
+    "scanning_time": {
+      "per_file_time": {
+        "mean": 0.01381650749517947,
+        "std_dev": 0.0008484829670014686
+      },
+      "total_time": 1.354017734527588,
+      "very_slow_files": [],
+      "very_slow_stats": {
+        "count_ratio": 0.0,
+        "time_ratio": 0.0
+      }
+    },
+    "tainting_time": {
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "total_time": 0.0,
+      "very_slow_rules_on_defs": [],
+      "very_slow_stats": {
+        "count_ratio": 0.0,
+        "time_ratio": 0.0
+      }
+    },
+    "targets": [],
+    "total_bytes": 0
+  },
+  "version": "1.163.0"
+}

@@ -1,0 +1,212 @@
+{
+  "schema": "actiontaint.datasets.benchmarks.v1",
+  "source_of_truth": [
+    "benchmarks/synthetic/*/expected.json",
+    "benchmarks/complex/*/expected.json"
+  ],
+  "total_benchmarks": 18,
+  "suites": [
+    {
+      "id": "synthetic",
+      "count": 13,
+      "primary_artifact": "evaluations/benchmark-actiontaint-vs-default-codeql-summary.json"
+    },
+    {
+      "id": "complex",
+      "count": 5,
+      "primary_artifact": "evaluations/complex-benchmarks-report/FINAL_REPORT.md"
+    }
+  ],
+  "benchmarks": [
+    {
+      "benchmark_id": "bind_argument",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/bind_argument",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "SQL Injection"
+      ],
+      "notes": "Models a tainted bound argument flowing into a SQL query."
+    },
+    {
+      "benchmark_id": "file_level_sql",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/file_level_sql",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "SQL Injection"
+      ],
+      "notes": "Models a file-level Server Action feeding a SQL sink."
+    },
+    {
+      "benchmark_id": "formdata_fetch_ssrf",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/formdata_fetch_ssrf",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "SSRF"
+      ],
+      "notes": "Models FormData-derived input flowing into a server-side network request."
+    },
+    {
+      "benchmark_id": "helper_wrapper_sql",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/helper_wrapper_sql",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "SQL Injection"
+      ],
+      "notes": "Models a multi-function helper-wrapper flow into a database query."
+    },
+    {
+      "benchmark_id": "hidden_input",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/hidden_input",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "Path Traversal"
+      ],
+      "notes": "Models a hidden-input-driven file path flowing into a file system sink."
+    },
+    {
+      "benchmark_id": "idor_prisma_delete",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/idor_prisma_delete",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "Broken Authorization / IDOR"
+      ],
+      "notes": "Models a client-controlled identifier reaching a delete-style ORM mutation without ownership checks."
+    },
+    {
+      "benchmark_id": "inline_sql",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/inline_sql",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "SQL Injection"
+      ],
+      "notes": "Models an inline Server Action building a SQL query from form input."
+    },
+    {
+      "benchmark_id": "object_entries_sql",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/object_entries_sql",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "SQL Injection"
+      ],
+      "notes": "Models `Object.fromEntries(formData)` flowing into a database query sink."
+    },
+    {
+      "benchmark_id": "prisma_raw_unsafe",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/prisma_raw_unsafe",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "SQL Injection"
+      ],
+      "notes": "Models user-controlled input reaching an unsafe raw ORM query."
+    },
+    {
+      "benchmark_id": "safe_authorized_delete",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/safe_authorized_delete",
+      "label": "safe",
+      "expected_finding_count": 0,
+      "expected_types": [],
+      "notes": "Safe authorization benchmark with an explicit ownership check."
+    },
+    {
+      "benchmark_id": "safe_parameterized_query",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/safe_parameterized_query",
+      "label": "safe",
+      "expected_finding_count": 0,
+      "expected_types": [],
+      "notes": "Safe query benchmark using parameterized database access."
+    },
+    {
+      "benchmark_id": "use_action_state",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/use_action_state",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "SQL Injection"
+      ],
+      "notes": "Models `useActionState`-based reachability for a SQL-injection flow."
+    },
+    {
+      "benchmark_id": "zod_validation",
+      "suite": "synthetic",
+      "relative_path": "benchmarks/synthetic/zod_validation",
+      "label": "safe",
+      "expected_finding_count": 0,
+      "expected_types": [],
+      "notes": "Safe: zod parses the input, then the value is used in a parameterized query. It stays quiet because of the parameterized query; zod itself is intentionally not modelled as a sanitizer."
+    },
+    {
+      "benchmark_id": "client_preview_ssrf",
+      "suite": "complex",
+      "relative_path": "benchmarks/complex/client_preview_ssrf",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "SSRF"
+      ],
+      "notes": "Models a client component directly invoking a reachable Server Action that triggers a server-side request."
+    },
+    {
+      "benchmark_id": "complex_order_search_sql",
+      "suite": "complex",
+      "relative_path": "benchmarks/complex/complex_order_search_sql",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "SQL Injection"
+      ],
+      "notes": "Models a layered action-to-service-to-repository SQL flow."
+    },
+    {
+      "benchmark_id": "project_member_idor",
+      "suite": "complex",
+      "relative_path": "benchmarks/complex/project_member_idor",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "Broken Authorization / IDOR"
+      ],
+      "notes": "Models an authenticated object-deletion path without a visible ownership constraint."
+    },
+    {
+      "benchmark_id": "safe_policy_layer_update",
+      "suite": "complex",
+      "relative_path": "benchmarks/complex/safe_policy_layer_update",
+      "label": "safe",
+      "expected_finding_count": 0,
+      "expected_types": [],
+      "notes": "Safe: the update's where clause carries ownership fields (workspaceId, ownerId), which satisfies the IDOR ownership heuristic. The requireWorkspaceAccess policy call itself is not modelled as a barrier."
+    },
+    {
+      "benchmark_id": "tenant_document_path_traversal",
+      "suite": "complex",
+      "relative_path": "benchmarks/complex/tenant_document_path_traversal",
+      "label": "vulnerable",
+      "expected_finding_count": 1,
+      "expected_types": [
+        "Path Traversal"
+      ],
+      "notes": "Models a route- and form-derived file path flowing into a document-read operation."
+    }
+  ]
+}

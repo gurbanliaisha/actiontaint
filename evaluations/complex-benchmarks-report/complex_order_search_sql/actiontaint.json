@@ -1,0 +1,187 @@
+{
+  "backend_used": "codeql",
+  "boundaries": [
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "app/actions.ts",
+      "function": "searchOrders",
+      "function_key": "app/actions.ts::searchOrders",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "used in useActionState(searchOrders, ...)",
+          "used in <form action={formAction}>"
+        ],
+        "hidden_inputs": [
+          {
+            "file": "app/search-panel.tsx",
+            "line": 11,
+            "name": "tenantId",
+            "value": "tenant_123"
+          }
+        ]
+      },
+      "reason": "used in useActionState(searchOrders, ...); used in <form action={formAction}>",
+      "source_parameters": [
+        "formData"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "app/actions.ts",
+          "function_key": "app/actions.ts::searchOrders",
+          "function_name": "searchOrders",
+          "index": 1,
+          "kind": "form_data_parameter",
+          "parameter": "formData",
+          "reason": "formData is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "client_reachable_actions": 1,
+    "findings": 1,
+    "server_actions": 1
+  },
+  "findings": [
+    {
+      "explanation": "Generated ActionTaint CodeQL query reported a framework-derived taint path.",
+      "rule_id": "js/actiontaint/generated-server-action-taint",
+      "severity": "HIGH",
+      "sink_file": "app/order-repository.ts",
+      "sink_line": 16,
+      "sink_snippet": "ActionTaint: SQL Injection from app/actions.ts::searchOrders::formData to app/order-repository.ts::findOrders dangerous sink. Source is [client-controlled Server Action input](1).",
+      "source_function": "app/actions.ts::searchOrders",
+      "source_parameter": "formData",
+      "taint_path": [
+        "app/actions.ts:6 Object. ... rmData)",
+        "app/actions.ts:6 payload",
+        "app/actions.ts:7 payload",
+        "app/actions.ts:7 String( ...  ?? \"\")",
+        "app/actions.ts:7 tenantId",
+        "app/actions.ts:11 tenantId",
+        "app/actions.ts:11 { tenan ... tatus } [tenantId]",
+        "app/order-service.ts:3 input [tenantId]",
+        "app/order-service.ts:10 input [tenantId]",
+        "app/order-service.ts:10 input.tenantId",
+        "app/order-service.ts:9 {/n    t ... tus/n  }",
+        "app/order-repository.ts:9 filters",
+        "app/order-repository.ts:11 filters",
+        "app/order-repository.ts:11 `tenant ... ntId}'`",
+        "app/order-repository.ts:10 [/n    ` ... ')`/n  ] [0]",
+        "app/order-repository.ts:10 [/n    ` ...  AND \")",
+        "app/order-repository.ts:10 where",
+        "app/order-repository.ts:16 where",
+        "app/order-repository.ts:16 `SELECT ... t DESC`",
+        "app/actions.ts:6 Object. ... rmData)",
+        "app/actions.ts:6 payload",
+        "app/actions.ts:8 payload",
+        "app/actions.ts:8 String( ...  ?? \"\")",
+        "app/actions.ts:8 term",
+        "app/actions.ts:11 term",
+        "app/actions.ts:11 { tenan ... tatus }",
+        "app/order-service.ts:3 input",
+        "app/order-service.ts:11 input",
+        "app/order-service.ts:11 input.term.trim()",
+        "app/order-service.ts:9 {/n    t ... tus/n  } [term]",
+        "app/order-repository.ts:9 filters [term]",
+        "app/order-repository.ts:13 filters [term]",
+        "app/order-repository.ts:13 filters.term",
+        "app/order-repository.ts:13 `(custo ... rm}%')`",
+        "app/order-repository.ts:10 [/n    ` ... ')`/n  ] [2]",
+        "app/order-repository.ts:10 [/n    ` ...  AND \")",
+        "app/order-repository.ts:10 where",
+        "app/order-repository.ts:16 where",
+        "app/order-repository.ts:16 `SELECT ... t DESC`",
+        "app/actions.ts:6 Object. ... rmData)",
+        "app/actions.ts:6 payload",
+        "app/actions.ts:9 payload",
+        "app/actions.ts:9 String( ... \"open\")",
+        "app/actions.ts:9 status",
+        "app/actions.ts:11 status",
+        "app/actions.ts:11 { tenan ... tatus } [status]",
+        "app/order-service.ts:3 input [status]",
+        "app/order-service.ts:8 input [status]",
+        "app/order-service.ts:8 input.status",
+        "app/order-service.ts:8 input.status.trim()",
+        "app/order-service.ts:8 input.s ... rCase()",
+        "app/order-service.ts:8 normalizedStatus",
+        "app/order-service.ts:12 normalizedStatus",
+        "app/order-service.ts:9 {/n    t ... tus/n  } [status]",
+        "app/order-repository.ts:9 filters [status]",
+        "app/order-repository.ts:12 filters [status]",
+        "app/order-repository.ts:12 filters.status",
+        "app/order-repository.ts:12 `status ... atus}'`",
+        "app/order-repository.ts:10 [/n    ` ... ')`/n  ] [1]",
+        "app/order-repository.ts:10 [/n    ` ...  AND \")",
+        "app/order-repository.ts:10 where",
+        "app/order-repository.ts:16 where",
+        "app/order-repository.ts:16 `SELECT ... t DESC`",
+        "app/actions.ts:6 Object. ... rmData)",
+        "app/actions.ts:6 payload",
+        "app/actions.ts:7 payload",
+        "app/actions.ts:7 String( ...  ?? \"\")",
+        "app/actions.ts:7 tenantId",
+        "app/actions.ts:11 tenantId",
+        "app/actions.ts:11 { tenan ... tatus }",
+        "app/order-service.ts:3 input",
+        "app/order-service.ts:10 input",
+        "app/order-service.ts:10 input.tenantId",
+        "app/order-service.ts:9 {/n    t ... tus/n  } [tenantId]",
+        "app/order-repository.ts:9 filters [tenantId]",
+        "app/order-repository.ts:11 filters [tenantId]",
+        "app/order-repository.ts:11 filters.tenantId",
+        "app/order-repository.ts:11 `tenant ... ntId}'`",
+        "app/order-repository.ts:10 [/n    ` ... ')`/n  ] [0]",
+        "app/order-repository.ts:10 [/n    ` ...  AND \")",
+        "app/order-repository.ts:10 where",
+        "app/order-repository.ts:16 where",
+        "app/order-repository.ts:16 `SELECT ... t DESC`"
+      ],
+      "vulnerability_type": "SQL Injection"
+    }
+  ],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "15.3.0",
+    "root": "benchmarks/complex_order_search_sql",
+    "source_file_count": 6
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 5,
+      "directive_kind": "file",
+      "end_line": 13,
+      "exported": true,
+      "file": "benchmarks/complex_order_search_sql/app/actions.ts",
+      "name": "searchOrders",
+      "params": [
+        {
+          "index": 0,
+          "name": "previousState",
+          "raw": "previousState: unknown",
+          "type_hint": "unknown"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "app/actions.ts",
+      "server_action": true,
+      "start_line": 5
+    }
+  ],
+  "warnings": [
+    "CodeQL completed in 116.30s."
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "backend_used": "codeql",
+  "boundaries": [
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "app/actions.ts",
+      "function": "downloadTenantDocument",
+      "function_key": "app/actions.ts::downloadTenantDocument",
+      "input_semantics": {
+        "bind_arguments": [
+          {
+            "classification": "route_param",
+            "expression": "params.tenantId",
+            "reason": "bind argument is derived from route params",
+            "target_parameter": "tenantId"
+          }
+        ],
+        "callsite_reasons": [
+          "used in <form action={action}>"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "used in <form action={action}>",
+      "source_parameters": [
+        "tenantId",
+        "formData"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": "params.tenantId",
+          "file": "app/actions.ts",
+          "function_key": "app/actions.ts::downloadTenantDocument",
+          "function_name": "downloadTenantDocument",
+          "index": 0,
+          "kind": "bind_route_param",
+          "parameter": "tenantId",
+          "reason": "bind argument is derived from route params"
+        },
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "app/actions.ts",
+          "function_key": "app/actions.ts::downloadTenantDocument",
+          "function_name": "downloadTenantDocument",
+          "index": 1,
+          "kind": "form_data_parameter",
+          "parameter": "formData",
+          "reason": "formData is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "client_reachable_actions": 1,
+    "findings": 1,
+    "server_actions": 1
+  },
+  "findings": [
+    {
+      "explanation": "Generated ActionTaint CodeQL query reported a framework-derived taint path.",
+      "rule_id": "js/actiontaint/generated-server-action-taint",
+      "severity": "HIGH",
+      "sink_file": "app/storage.ts",
+      "sink_line": 5,
+      "sink_snippet": "ActionTaint: Path Traversal from app/actions.ts::downloadTenantDocument::tenantId to app/storage.ts::readTenantDocument dangerous sink. Source is [client-controlled Server Action input](1).\nActionTaint: Path Traversal from app/actions.ts::downloadTenantDocument::formData to app/storage.ts::readTenantDocument dangerous sink. Source is [client-controlled Server Action input](2).",
+      "source_function": "app/actions.ts::downloadTenantDocument",
+      "source_parameter": "tenantId",
+      "taint_path": [
+        "app/actions.ts:5 tenantId",
+        "app/actions.ts:7 tenantId",
+        "app/storage.ts:3 tenantId",
+        "app/storage.ts:4 tenantId",
+        "app/storage.ts:4 path",
+        "app/storage.ts:5 path",
+        "app/actions.ts:6 formDat ... ument\")",
+        "app/actions.ts:6 documentName",
+        "app/actions.ts:7 documentName",
+        "app/storage.ts:3 documentName",
+        "app/storage.ts:4 documentName",
+        "app/storage.ts:4 path",
+        "app/storage.ts:5 path"
+      ],
+      "vulnerability_type": "Path Traversal"
+    }
+  ],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "15.3.0",
+    "root": "benchmarks/tenant_document_path_traversal",
+    "source_file_count": 3
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 5,
+      "directive_kind": "file",
+      "end_line": 9,
+      "exported": true,
+      "file": "benchmarks/tenant_document_path_traversal/app/actions.ts",
+      "name": "downloadTenantDocument",
+      "params": [
+        {
+          "index": 0,
+          "name": "tenantId",
+          "raw": "tenantId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "app/actions.ts",
+      "server_action": true,
+      "start_line": 5
+    }
+  ],
+  "warnings": [
+    "CodeQL completed in 117.02s."
+  ]
+}

@@ -1,0 +1,1042 @@
+{
+  "backend_used": "local",
+  "boundaries": [],
+  "counts": {
+    "client_reachable_actions": 0,
+    "findings": 0,
+    "server_actions": 48
+  },
+  "findings": [],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "15.3.9",
+    "root": "nextjs-starter-medusa",
+    "source_file_count": 207
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 24,
+      "directive_kind": "file",
+      "end_line": 53,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "retrieveCart",
+      "params": [
+        {
+          "index": 0,
+          "name": "cartId",
+          "raw": "cartId?: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "fields",
+          "raw": "fields?: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 24
+    },
+    {
+      "async_function": true,
+      "body_start_line": 55,
+      "directive_kind": "file",
+      "end_line": 90,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "getOrSetCart",
+      "params": [
+        {
+          "index": 0,
+          "name": "countryCode",
+          "raw": "countryCode: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 55
+    },
+    {
+      "async_function": true,
+      "body_start_line": 92,
+      "directive_kind": "file",
+      "end_line": 115,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "updateCart",
+      "params": [
+        {
+          "index": 0,
+          "name": "data",
+          "raw": "data: HttpTypes.StoreUpdateCart",
+          "type_hint": "HttpTypes.StoreUpdateCart"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 92
+    },
+    {
+      "async_function": true,
+      "body_start_line": 125,
+      "directive_kind": "file",
+      "end_line": 158,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "addToCart",
+      "params": [
+        {
+          "index": 0,
+          "name": "{\r\n  variantId,\r\n  quantity,\r\n  countryCode,\r\n}",
+          "raw": "{\r\n  variantId,\r\n  quantity,\r\n  countryCode,\r\n}: {\r\n  variantId: string\r\n  quantity: number\r\n  countryCode: string\r\n}",
+          "type_hint": "{\r\n  variantId: string\r\n  quantity: number\r\n  countryCode: string\r\n}"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 117
+    },
+    {
+      "async_function": true,
+      "body_start_line": 166,
+      "directive_kind": "file",
+      "end_line": 191,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "updateLineItem",
+      "params": [
+        {
+          "index": 0,
+          "name": "{\r\n  lineId,\r\n  quantity,\r\n}",
+          "raw": "{\r\n  lineId,\r\n  quantity,\r\n}: {\r\n  lineId: string\r\n  quantity: number\r\n}",
+          "type_hint": "{\r\n  lineId: string\r\n  quantity: number\r\n}"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 160
+    },
+    {
+      "async_function": true,
+      "body_start_line": 193,
+      "directive_kind": "file",
+      "end_line": 218,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "deleteLineItem",
+      "params": [
+        {
+          "index": 0,
+          "name": "lineId",
+          "raw": "lineId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 193
+    },
+    {
+      "async_function": true,
+      "body_start_line": 226,
+      "directive_kind": "file",
+      "end_line": 238,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "setShippingMethod",
+      "params": [
+        {
+          "index": 0,
+          "name": "{\r\n  cartId,\r\n  shippingMethodId,\r\n}",
+          "raw": "{\r\n  cartId,\r\n  shippingMethodId,\r\n}: {\r\n  cartId: string\r\n  shippingMethodId: string\r\n}",
+          "type_hint": "{\r\n  cartId: string\r\n  shippingMethodId: string\r\n}"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 220
+    },
+    {
+      "async_function": true,
+      "body_start_line": 243,
+      "directive_kind": "file",
+      "end_line": 256,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "initiatePaymentSession",
+      "params": [
+        {
+          "index": 0,
+          "name": "cart",
+          "raw": "cart: HttpTypes.StoreCart",
+          "type_hint": "HttpTypes.StoreCart"
+        },
+        {
+          "index": 1,
+          "name": "data",
+          "raw": "data: HttpTypes.StoreInitializePaymentSession",
+          "type_hint": "HttpTypes.StoreInitializePaymentSession"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 240
+    },
+    {
+      "async_function": true,
+      "body_start_line": 258,
+      "directive_kind": "file",
+      "end_line": 279,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "applyPromotions",
+      "params": [
+        {
+          "index": 0,
+          "name": "codes",
+          "raw": "codes: string[]",
+          "type_hint": "string[]"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 258
+    },
+    {
+      "async_function": true,
+      "body_start_line": 281,
+      "directive_kind": "file",
+      "end_line": 291,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "applyGiftCard",
+      "params": [
+        {
+          "index": 0,
+          "name": "code",
+          "raw": "code: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 281
+    },
+    {
+      "async_function": true,
+      "body_start_line": 293,
+      "directive_kind": "file",
+      "end_line": 302,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "removeDiscount",
+      "params": [
+        {
+          "index": 0,
+          "name": "code",
+          "raw": "code: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 293
+    },
+    {
+      "async_function": true,
+      "body_start_line": 308,
+      "directive_kind": "file",
+      "end_line": 322,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "removeGiftCard",
+      "params": [
+        {
+          "index": 0,
+          "name": "codeToRemove",
+          "raw": "codeToRemove: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "giftCards",
+          "raw": "giftCards: any[]",
+          "type_hint": "any[]"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 304
+    },
+    {
+      "async_function": true,
+      "body_start_line": 327,
+      "directive_kind": "file",
+      "end_line": 334,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "submitPromotionForm",
+      "params": [
+        {
+          "index": 0,
+          "name": "currentState",
+          "raw": "currentState: unknown",
+          "type_hint": "unknown"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 324
+    },
+    {
+      "async_function": true,
+      "body_start_line": 337,
+      "directive_kind": "file",
+      "end_line": 387,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "setAddresses",
+      "params": [
+        {
+          "index": 0,
+          "name": "currentState",
+          "raw": "currentState: unknown",
+          "type_hint": "unknown"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 337
+    },
+    {
+      "async_function": true,
+      "body_start_line": 394,
+      "directive_kind": "file",
+      "end_line": 426,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "placeOrder",
+      "params": [
+        {
+          "index": 0,
+          "name": "cartId",
+          "raw": "cartId?: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 394
+    },
+    {
+      "async_function": true,
+      "body_start_line": 433,
+      "directive_kind": "file",
+      "end_line": 454,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "updateRegion",
+      "params": [
+        {
+          "index": 0,
+          "name": "countryCode",
+          "raw": "countryCode: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "currentPath",
+          "raw": "currentPath: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 433
+    },
+    {
+      "async_function": true,
+      "body_start_line": 456,
+      "directive_kind": "file",
+      "end_line": 473,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/cart.ts",
+      "name": "listCartOptions",
+      "params": [],
+      "rel_path": "src/lib/data/cart.ts",
+      "server_action": true,
+      "start_line": 456
+    },
+    {
+      "async_function": true,
+      "body_start_line": 7,
+      "directive_kind": "file",
+      "end_line": 21,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/collections.ts",
+      "name": "retrieveCollection",
+      "params": [
+        {
+          "index": 0,
+          "name": "id",
+          "raw": "id: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/collections.ts",
+      "server_action": true,
+      "start_line": 7
+    },
+    {
+      "async_function": true,
+      "body_start_line": 25,
+      "directive_kind": "file",
+      "end_line": 43,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/collections.ts",
+      "name": "listCollections",
+      "params": [
+        {
+          "index": 0,
+          "name": "queryParams",
+          "raw": "queryParams: Record<string, string> = {}",
+          "type_hint": "Record<string, string>"
+        }
+      ],
+      "rel_path": "src/lib/data/collections.ts",
+      "server_action": true,
+      "start_line": 23
+    },
+    {
+      "async_function": true,
+      "body_start_line": 47,
+      "directive_kind": "file",
+      "end_line": 59,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/collections.ts",
+      "name": "getCollectionByHandle",
+      "params": [
+        {
+          "index": 0,
+          "name": "handle",
+          "raw": "handle: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/collections.ts",
+      "server_action": true,
+      "start_line": 45
+    },
+    {
+      "async_function": true,
+      "body_start_line": 19,
+      "directive_kind": "file",
+      "end_line": 44,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/customer.ts",
+      "name": "retrieveCustomer",
+      "params": [],
+      "rel_path": "src/lib/data/customer.ts",
+      "server_action": true,
+      "start_line": 18
+    },
+    {
+      "async_function": true,
+      "body_start_line": 46,
+      "directive_kind": "file",
+      "end_line": 60,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/customer.ts",
+      "name": "updateCustomer",
+      "params": [
+        {
+          "index": 0,
+          "name": "body",
+          "raw": "body: HttpTypes.StoreUpdateCustomer",
+          "type_hint": "HttpTypes.StoreUpdateCustomer"
+        }
+      ],
+      "rel_path": "src/lib/data/customer.ts",
+      "server_action": true,
+      "start_line": 46
+    },
+    {
+      "async_function": true,
+      "body_start_line": 62,
+      "directive_kind": "file",
+      "end_line": 105,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/customer.ts",
+      "name": "signup",
+      "params": [
+        {
+          "index": 0,
+          "name": "_currentState",
+          "raw": "_currentState: unknown",
+          "type_hint": "unknown"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "src/lib/data/customer.ts",
+      "server_action": true,
+      "start_line": 62
+    },
+    {
+      "async_function": true,
+      "body_start_line": 107,
+      "directive_kind": "file",
+      "end_line": 128,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/customer.ts",
+      "name": "login",
+      "params": [
+        {
+          "index": 0,
+          "name": "_currentState",
+          "raw": "_currentState: unknown",
+          "type_hint": "unknown"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "src/lib/data/customer.ts",
+      "server_action": true,
+      "start_line": 107
+    },
+    {
+      "async_function": true,
+      "body_start_line": 130,
+      "directive_kind": "file",
+      "end_line": 144,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/customer.ts",
+      "name": "signout",
+      "params": [
+        {
+          "index": 0,
+          "name": "countryCode",
+          "raw": "countryCode: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/customer.ts",
+      "server_action": true,
+      "start_line": 130
+    },
+    {
+      "async_function": true,
+      "body_start_line": 146,
+      "directive_kind": "file",
+      "end_line": 159,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/customer.ts",
+      "name": "transferCart",
+      "params": [],
+      "rel_path": "src/lib/data/customer.ts",
+      "server_action": true,
+      "start_line": 146
+    },
+    {
+      "async_function": true,
+      "body_start_line": 164,
+      "directive_kind": "file",
+      "end_line": 197,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/customer.ts",
+      "name": "addCustomerAddress",
+      "params": [
+        {
+          "index": 0,
+          "name": "currentState",
+          "raw": "currentState: Record<string, unknown>",
+          "type_hint": "Record<string, unknown>"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "src/lib/data/customer.ts",
+      "server_action": true,
+      "start_line": 161
+    },
+    {
+      "async_function": true,
+      "body_start_line": 201,
+      "directive_kind": "file",
+      "end_line": 216,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/customer.ts",
+      "name": "deleteCustomerAddress",
+      "params": [
+        {
+          "index": 0,
+          "name": "addressId",
+          "raw": "addressId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/customer.ts",
+      "server_action": true,
+      "start_line": 199
+    },
+    {
+      "async_function": true,
+      "body_start_line": 221,
+      "directive_kind": "file",
+      "end_line": 261,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/customer.ts",
+      "name": "updateCustomerAddress",
+      "params": [
+        {
+          "index": 0,
+          "name": "currentState",
+          "raw": "currentState: Record<string, unknown>",
+          "type_hint": "Record<string, unknown>"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "src/lib/data/customer.ts",
+      "server_action": true,
+      "start_line": 218
+    },
+    {
+      "async_function": true,
+      "body_start_line": 7,
+      "directive_kind": "file",
+      "end_line": 33,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/fulfillment.ts",
+      "name": "listCartShippingMethods",
+      "params": [
+        {
+          "index": 0,
+          "name": "cartId",
+          "raw": "cartId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/fulfillment.ts",
+      "server_action": true,
+      "start_line": 7
+    },
+    {
+      "async_function": true,
+      "body_start_line": 39,
+      "directive_kind": "file",
+      "end_line": 68,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/fulfillment.ts",
+      "name": "calculatePriceForShippingOption",
+      "params": [
+        {
+          "index": 0,
+          "name": "optionId",
+          "raw": "optionId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "cartId",
+          "raw": "cartId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 2,
+          "name": "data",
+          "raw": "data?: Record<string, unknown>",
+          "type_hint": "Record<string, unknown>"
+        }
+      ],
+      "rel_path": "src/lib/data/fulfillment.ts",
+      "server_action": true,
+      "start_line": 35
+    },
+    {
+      "async_function": true,
+      "body_start_line": 13,
+      "directive_kind": "file",
+      "end_line": 20,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/locale-actions.ts",
+      "name": "getLocale",
+      "params": [],
+      "rel_path": "src/lib/data/locale-actions.ts",
+      "server_action": true,
+      "start_line": 13
+    },
+    {
+      "async_function": true,
+      "body_start_line": 25,
+      "directive_kind": "file",
+      "end_line": 33,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/locale-actions.ts",
+      "name": "setLocaleCookie",
+      "params": [
+        {
+          "index": 0,
+          "name": "locale",
+          "raw": "locale: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/locale-actions.ts",
+      "server_action": true,
+      "start_line": 25
+    },
+    {
+      "async_function": true,
+      "body_start_line": 39,
+      "directive_kind": "file",
+      "end_line": 74,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/locale-actions.ts",
+      "name": "updateLocale",
+      "params": [
+        {
+          "index": 0,
+          "name": "localeCode",
+          "raw": "localeCode: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/locale-actions.ts",
+      "server_action": true,
+      "start_line": 39
+    },
+    {
+      "async_function": true,
+      "body_start_line": 15,
+      "directive_kind": "file",
+      "end_line": 28,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/locales.ts",
+      "name": "listLocales",
+      "params": [],
+      "rel_path": "src/lib/data/locales.ts",
+      "server_action": true,
+      "start_line": 15
+    },
+    {
+      "async_function": true,
+      "body_start_line": 5,
+      "directive_kind": "file",
+      "end_line": 9,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/onboarding.ts",
+      "name": "resetOnboardingState",
+      "params": [
+        {
+          "index": 0,
+          "name": "orderId",
+          "raw": "orderId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/onboarding.ts",
+      "server_action": true,
+      "start_line": 5
+    },
+    {
+      "async_function": true,
+      "body_start_line": 8,
+      "directive_kind": "file",
+      "end_line": 30,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/orders.ts",
+      "name": "retrieveOrder",
+      "params": [
+        {
+          "index": 0,
+          "name": "id",
+          "raw": "id: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/orders.ts",
+      "server_action": true,
+      "start_line": 8
+    },
+    {
+      "async_function": true,
+      "body_start_line": 36,
+      "directive_kind": "file",
+      "end_line": 61,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/orders.ts",
+      "name": "listOrders",
+      "params": [
+        {
+          "index": 0,
+          "name": "limit",
+          "raw": "limit: number = 10",
+          "type_hint": "number"
+        },
+        {
+          "index": 1,
+          "name": "offset",
+          "raw": "offset: number = 0",
+          "type_hint": "number"
+        },
+        {
+          "index": 2,
+          "name": "filters",
+          "raw": "filters?: Record<string, any>",
+          "type_hint": "Record<string, any>"
+        }
+      ],
+      "rel_path": "src/lib/data/orders.ts",
+      "server_action": true,
+      "start_line": 32
+    },
+    {
+      "async_function": true,
+      "body_start_line": 74,
+      "directive_kind": "file",
+      "end_line": 94,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/orders.ts",
+      "name": "createTransferRequest",
+      "params": [
+        {
+          "index": 0,
+          "name": "state",
+          "raw": "state: {\r\n    success: boolean\r\n    error: string | null\r\n    order: HttpTypes.StoreOrder | null\r\n  }",
+          "type_hint": "{\r\n    success: boolean\r\n    error: string | null\r\n    order: HttpTypes.StoreOrder | null\r\n  }"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "src/lib/data/orders.ts",
+      "server_action": true,
+      "start_line": 63
+    },
+    {
+      "async_function": true,
+      "body_start_line": 96,
+      "directive_kind": "file",
+      "end_line": 103,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/orders.ts",
+      "name": "acceptTransferRequest",
+      "params": [
+        {
+          "index": 0,
+          "name": "id",
+          "raw": "id: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "token",
+          "raw": "token: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/orders.ts",
+      "server_action": true,
+      "start_line": 96
+    },
+    {
+      "async_function": true,
+      "body_start_line": 105,
+      "directive_kind": "file",
+      "end_line": 112,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/orders.ts",
+      "name": "declineTransferRequest",
+      "params": [
+        {
+          "index": 0,
+          "name": "id",
+          "raw": "id: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "token",
+          "raw": "token: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/orders.ts",
+      "server_action": true,
+      "start_line": 105
+    },
+    {
+      "async_function": true,
+      "body_start_line": 7,
+      "directive_kind": "file",
+      "end_line": 35,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/payment.ts",
+      "name": "listCartPaymentMethods",
+      "params": [
+        {
+          "index": 0,
+          "name": "regionId",
+          "raw": "regionId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/payment.ts",
+      "server_action": true,
+      "start_line": 7
+    },
+    {
+      "async_function": true,
+      "body_start_line": 24,
+      "directive_kind": "file",
+      "end_line": 86,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/products.ts",
+      "name": "listProducts",
+      "params": [
+        {
+          "index": 0,
+          "name": "{\r\n  pageParam = 1,\r\n  queryParams,\r\n  countryCode,\r\n  regionId,\r\n}",
+          "raw": "{\r\n  pageParam = 1,\r\n  queryParams,\r\n  countryCode,\r\n  regionId,\r\n}: {\r\n  pageParam?: number\r\n  queryParams?: HttpTypes.FindParams & HttpTypes.StoreProductListParams\r\n  countryCode?: string\r\n  regionId?: string\r\n}",
+          "type_hint": "{\r\n  pageParam?: number\r\n  queryParams?: HttpTypes.FindParams & HttpTypes.StoreProductListParams\r\n  countryCode?: string\r\n  regionId?: string\r\n}"
+        }
+      ],
+      "rel_path": "src/lib/data/products.ts",
+      "server_action": true,
+      "start_line": 10
+    },
+    {
+      "async_function": true,
+      "body_start_line": 106,
+      "directive_kind": "file",
+      "end_line": 136,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/products.ts",
+      "name": "listProductsWithSort",
+      "params": [
+        {
+          "index": 0,
+          "name": "{\r\n  page = 0,\r\n  queryParams,\r\n  sortBy = \"created_at\",\r\n  countryCode,\r\n}",
+          "raw": "{\r\n  page = 0,\r\n  queryParams,\r\n  sortBy = \"created_at\",\r\n  countryCode,\r\n}: {\r\n  page?: number\r\n  queryParams?: HttpTypes.FindParams & HttpTypes.StoreProductParams\r\n  sortBy?: SortOptions\r\n  countryCode: string\r\n}",
+          "type_hint": "{\r\n  page?: number\r\n  queryParams?: HttpTypes.FindParams & HttpTypes.StoreProductParams\r\n  sortBy?: SortOptions\r\n  countryCode: string\r\n}"
+        }
+      ],
+      "rel_path": "src/lib/data/products.ts",
+      "server_action": true,
+      "start_line": 92
+    },
+    {
+      "async_function": true,
+      "body_start_line": 8,
+      "directive_kind": "file",
+      "end_line": 21,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/regions.ts",
+      "name": "listRegions",
+      "params": [],
+      "rel_path": "src/lib/data/regions.ts",
+      "server_action": true,
+      "start_line": 8
+    },
+    {
+      "async_function": true,
+      "body_start_line": 23,
+      "directive_kind": "file",
+      "end_line": 36,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/regions.ts",
+      "name": "retrieveRegion",
+      "params": [
+        {
+          "index": 0,
+          "name": "id",
+          "raw": "id: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/regions.ts",
+      "server_action": true,
+      "start_line": 23
+    },
+    {
+      "async_function": true,
+      "body_start_line": 40,
+      "directive_kind": "file",
+      "end_line": 66,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/regions.ts",
+      "name": "getRegion",
+      "params": [
+        {
+          "index": 0,
+          "name": "countryCode",
+          "raw": "countryCode: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/regions.ts",
+      "server_action": true,
+      "start_line": 40
+    },
+    {
+      "async_function": true,
+      "body_start_line": 10,
+      "directive_kind": "file",
+      "end_line": 38,
+      "exported": true,
+      "file": "nextjs-starter-medusa/src/lib/data/variants.ts",
+      "name": "retrieveVariant",
+      "params": [
+        {
+          "index": 0,
+          "name": "variant_id",
+          "raw": "variant_id: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "src/lib/data/variants.ts",
+      "server_action": true,
+      "start_line": 8
+    }
+  ],
+  "warnings": []
+}

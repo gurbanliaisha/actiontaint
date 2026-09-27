@@ -1,0 +1,441 @@
+{
+  "backend_used": "codeql",
+  "boundaries": [
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "app/app.dub.co/(share)/share/[dashboardId]/action.ts",
+      "function": "verifyPassword",
+      "function_key": "app/app.dub.co/(share)/share/[dashboardId]/action.ts::verifyPassword",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "used in useActionState(verifyPassword, ...)",
+          "used in <form action={formAction}>"
+        ],
+        "hidden_inputs": [
+          {
+            "file": "app/app.dub.co/(share)/share/[dashboardId]/form.tsx",
+            "line": 30,
+            "name": "dashboardId",
+            "value": "dashboardId"
+          }
+        ]
+      },
+      "reason": "used in useActionState(verifyPassword, ...); used in <form action={formAction}>",
+      "source_parameters": [
+        "data"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "app/app.dub.co/(share)/share/[dashboardId]/action.ts",
+          "function_key": "app/app.dub.co/(share)/share/[dashboardId]/action.ts::verifyPassword",
+          "function_name": "verifyPassword",
+          "index": 1,
+          "kind": "form_data_parameter",
+          "parameter": "data",
+          "reason": "data is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "app/password/[linkId]/action.ts",
+      "function": "verifyPassword",
+      "function_key": "app/password/[linkId]/action.ts::verifyPassword",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "used in useActionState(verifyPassword, ...)",
+          "used in <form action={formAction}>"
+        ],
+        "hidden_inputs": [
+          {
+            "file": "app/password/[linkId]/form.tsx",
+            "line": 33,
+            "name": "linkId",
+            "value": "linkId"
+          }
+        ]
+      },
+      "reason": "used in useActionState(verifyPassword, ...); used in <form action={formAction}>",
+      "source_parameters": [
+        "data"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "app/password/[linkId]/action.ts",
+          "function_key": "app/password/[linkId]/action.ts::verifyPassword",
+          "function_name": "verifyPassword",
+          "index": 1,
+          "kind": "form_data_parameter",
+          "parameter": "data",
+          "reason": "data is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "lib/actions/actiontaint-seeded-idor.ts",
+      "function": "actionTaintSeededDeleteWebhook",
+      "function_key": "lib/actions/actiontaint-seeded-idor.ts::actionTaintSeededDeleteWebhook",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "used in useActionState(actionTaintSeededDeleteWebhook, ...)",
+          "used in <form action={formAction}>"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "used in useActionState(actionTaintSeededDeleteWebhook, ...); used in <form action={formAction}>",
+      "source_parameters": [
+        "formData"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "lib/actions/actiontaint-seeded-idor.ts",
+          "function_key": "lib/actions/actiontaint-seeded-idor.ts::actionTaintSeededDeleteWebhook",
+          "function_name": "actionTaintSeededDeleteWebhook",
+          "index": 1,
+          "kind": "form_data_parameter",
+          "parameter": "formData",
+          "reason": "formData is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "lib/ai/generate-csv-mapping.ts",
+      "function": "generateCsvMapping",
+      "function_key": "lib/ai/generate-csv-mapping.ts::generateCsvMapping",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as generateCsvMapping(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as generateCsvMapping(...)",
+      "source_parameters": [
+        "fieldColumns",
+        "firstRows"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "lib/ai/generate-csv-mapping.ts",
+          "function_key": "lib/ai/generate-csv-mapping.ts::generateCsvMapping",
+          "function_name": "generateCsvMapping",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "fieldColumns",
+          "reason": "parameter is callable from a 'use client' component"
+        },
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "lib/ai/generate-csv-mapping.ts",
+          "function_key": "lib/ai/generate-csv-mapping.ts::generateCsvMapping",
+          "function_name": "generateCsvMapping",
+          "index": 1,
+          "kind": "client_argument",
+          "parameter": "firstRows",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "client_reachable_actions": 4,
+    "findings": 1,
+    "server_actions": 11
+  },
+  "findings": [
+    {
+      "explanation": "Generated ActionTaint CodeQL query reported a framework-derived taint path.",
+      "rule_id": "js/actiontaint/generated-server-action-taint",
+      "severity": "HIGH",
+      "sink_file": "lib/actions/actiontaint-seeded-idor.ts",
+      "sink_line": 18,
+      "sink_snippet": "ActionTaint: Broken Authorization / IDOR from lib/actions/actiontaint-seeded-idor.ts::actionTaintSeededDeleteWebhook::formData to lib/actions/actiontaint-seeded-idor.ts::actionTaintSeededDeleteWebhook dangerous sink. Source is [client-controlled Server Action input](1).",
+      "source_function": "lib/actions/actiontaint-seeded-idor.ts::actionTaintSeededDeleteWebhook",
+      "source_parameter": "formData",
+      "taint_path": [
+        "lib/actions/actiontaint-seeded-idor.ts:16 formDat ... ookId\")",
+        "lib/actions/actiontaint-seeded-idor.ts:16 webhookId",
+        "lib/actions/actiontaint-seeded-idor.ts:20 webhookId",
+        "lib/actions/actiontaint-seeded-idor.ts:19 {/n      ... ,/n    }",
+        "lib/actions/actiontaint-seeded-idor.ts:18 {/n    w ...  },/n  }"
+      ],
+      "vulnerability_type": "Broken Authorization / IDOR"
+    }
+  ],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "15.5.8",
+    "root": "real-nextjs-projects-round2/dub-seeded-idor/apps/web",
+    "source_file_count": 3188
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 6,
+      "directive_kind": "file",
+      "end_line": 29,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/dub-seeded-idor/apps/web/app/app.dub.co/(share)/share/[dashboardId]/action.ts",
+      "name": "verifyPassword",
+      "params": [
+        {
+          "index": 0,
+          "name": "_prevState",
+          "raw": "_prevState: any",
+          "type_hint": "any"
+        },
+        {
+          "index": 1,
+          "name": "data",
+          "raw": "data: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "app/app.dub.co/(share)/share/[dashboardId]/action.ts",
+      "server_action": true,
+      "start_line": 6
+    },
+    {
+      "async_function": true,
+      "body_start_line": 6,
+      "directive_kind": "file",
+      "end_line": 33,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/dub-seeded-idor/apps/web/app/password/[linkId]/action.ts",
+      "name": "verifyPassword",
+      "params": [
+        {
+          "index": 0,
+          "name": "_prevState",
+          "raw": "_prevState: any",
+          "type_hint": "any"
+        },
+        {
+          "index": 1,
+          "name": "data",
+          "raw": "data: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "app/password/[linkId]/action.ts",
+      "server_action": true,
+      "start_line": 6
+    },
+    {
+      "async_function": true,
+      "body_start_line": 9,
+      "directive_kind": "file",
+      "end_line": 25,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/dub-seeded-idor/apps/web/lib/actions/actiontaint-seeded-idor.ts",
+      "name": "actionTaintSeededDeleteWebhook",
+      "params": [
+        {
+          "index": 0,
+          "name": "_prevState",
+          "raw": "_prevState: unknown",
+          "type_hint": "unknown"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "lib/actions/actiontaint-seeded-idor.ts",
+      "server_action": true,
+      "start_line": 6
+    },
+    {
+      "async_function": true,
+      "body_start_line": 57,
+      "directive_kind": "file",
+      "end_line": 157,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/dub-seeded-idor/apps/web/lib/actions/partners/ban-partner.ts",
+      "name": "banPartner",
+      "params": [
+        {
+          "index": 0,
+          "name": "{\r\n  workspace,\r\n  partnerId,\r\n  reason,\r\n  user,\r\n  flagForFraud,\r\n  flagForFraudReason,\r\n}",
+          "raw": "{\r\n  workspace,\r\n  partnerId,\r\n  reason,\r\n  user,\r\n  flagForFraud,\r\n  flagForFraudReason,\r\n}: BanPartnerInput",
+          "type_hint": "BanPartnerInput"
+        }
+      ],
+      "rel_path": "lib/actions/partners/ban-partner.ts",
+      "server_action": true,
+      "start_line": 50
+    },
+    {
+      "async_function": true,
+      "body_start_line": 38,
+      "directive_kind": "file",
+      "end_line": 63,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/dub-seeded-idor/apps/web/lib/actions/partners/force-withdrawal.ts",
+      "name": "forceWithdrawal",
+      "params": [
+        {
+          "index": 0,
+          "name": "partner",
+          "raw": "partner: Pick<Partner, \"id\" | \"defaultPayoutMethod\">",
+          "type_hint": "Pick<Partner, \"id\" | \"defaultPayoutMethod\">"
+        }
+      ],
+      "rel_path": "lib/actions/partners/force-withdrawal.ts",
+      "server_action": true,
+      "start_line": 36
+    },
+    {
+      "async_function": true,
+      "body_start_line": 11,
+      "directive_kind": "file",
+      "end_line": 62,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/dub-seeded-idor/apps/web/lib/ai/generate-csv-mapping.ts",
+      "name": "generateCsvMapping",
+      "params": [
+        {
+          "index": 0,
+          "name": "fieldColumns",
+          "raw": "fieldColumns: string[]",
+          "type_hint": "string[]"
+        },
+        {
+          "index": 1,
+          "name": "firstRows",
+          "raw": "firstRows: Record<string, string>[]",
+          "type_hint": "Record<string, string>[]"
+        }
+      ],
+      "rel_path": "lib/ai/generate-csv-mapping.ts",
+      "server_action": true,
+      "start_line": 8
+    },
+    {
+      "async_function": true,
+      "body_start_line": 40,
+      "directive_kind": "file",
+      "end_line": 61,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/dub-seeded-idor/apps/web/lib/ai/generate-filters.ts",
+      "name": "generateFilters",
+      "params": [
+        {
+          "index": 0,
+          "name": "prompt",
+          "raw": "prompt: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "lib/ai/generate-filters.ts",
+      "server_action": true,
+      "start_line": 40
+    },
+    {
+      "async_function": true,
+      "body_start_line": 7,
+      "directive_kind": "file",
+      "end_line": 58,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/dub-seeded-idor/apps/web/lib/api/oauth/actions.ts",
+      "name": "validateAuthorizeRequest",
+      "params": [
+        {
+          "index": 0,
+          "name": "params",
+          "raw": "params: any",
+          "type_hint": "any"
+        }
+      ],
+      "rel_path": "lib/api/oauth/actions.ts",
+      "server_action": true,
+      "start_line": 7
+    },
+    {
+      "async_function": true,
+      "body_start_line": 39,
+      "directive_kind": "file",
+      "end_line": 270,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/dub-seeded-idor/apps/web/lib/api/partners/create-and-enroll-partner.ts",
+      "name": "createAndEnrollPartner",
+      "params": [
+        {
+          "index": 0,
+          "name": "{\r\n  workspace,\r\n  program,\r\n  partner,\r\n  link,\r\n  status = \"approved\",\r\n  skipEnrollmentCheck = false,\r\n  enrolledAt,\r\n  userId,\r\n}",
+          "raw": "{\r\n  workspace,\r\n  program,\r\n  partner,\r\n  link,\r\n  status = \"approved\",\r\n  skipEnrollmentCheck = false,\r\n  enrolledAt,\r\n  userId,\r\n}: CreateAndEnrollPartnerInput",
+          "type_hint": "CreateAndEnrollPartnerInput"
+        }
+      ],
+      "rel_path": "lib/api/partners/create-and-enroll-partner.ts",
+      "server_action": true,
+      "start_line": 30
+    },
+    {
+      "async_function": true,
+      "body_start_line": 22,
+      "directive_kind": "file",
+      "end_line": 51,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/dub-seeded-idor/apps/web/lib/submitted-leads/mark-submitted-lead-closed-won.ts",
+      "name": "markSubmittedLeadClosedWon",
+      "params": [
+        {
+          "index": 0,
+          "name": "{\r\n  workspace,\r\n  lead,\r\n  saleAmount,\r\n  stripeCustomerId,\r\n}",
+          "raw": "{\r\n  workspace,\r\n  lead,\r\n  saleAmount,\r\n  stripeCustomerId,\r\n}: MarkSubmittedLeadClosedWonInput",
+          "type_hint": "MarkSubmittedLeadClosedWonInput"
+        }
+      ],
+      "rel_path": "lib/submitted-leads/mark-submitted-lead-closed-won.ts",
+      "server_action": true,
+      "start_line": 17
+    },
+    {
+      "async_function": true,
+      "body_start_line": 20,
+      "directive_kind": "file",
+      "end_line": 84,
+      "exported": true,
+      "file": "real-nextjs-projects-round2/dub-seeded-idor/apps/web/lib/submitted-leads/mark-submitted-lead-qualified.ts",
+      "name": "markSubmittedLeadQualified",
+      "params": [
+        {
+          "index": 0,
+          "name": "{\r\n  workspace,\r\n  lead,\r\n  externalId,\r\n}",
+          "raw": "{\r\n  workspace,\r\n  lead,\r\n  externalId,\r\n}: MarkSubmittedLeadQualifiedInput",
+          "type_hint": "MarkSubmittedLeadQualifiedInput"
+        }
+      ],
+      "rel_path": "lib/submitted-leads/mark-submitted-lead-qualified.ts",
+      "server_action": true,
+      "start_line": 16
+    }
+  ],
+  "warnings": [
+    "CodeQL completed in 252.64s."
+  ]
+}

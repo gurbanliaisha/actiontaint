@@ -1,0 +1,168 @@
+{
+  "backend_used": "local",
+  "boundaries": [
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "app/posts/[id]/page.tsx",
+      "function": "deletePost",
+      "function_key": "app/posts/[id]/page.tsx::deletePost",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "used in <form action={deletePost}>"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "used in <form action={deletePost}>",
+      "source_parameters": [],
+      "source_specs": []
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "app/posts/new/actions.ts",
+      "function": "createPost",
+      "function_key": "app/posts/new/actions.ts::createPost",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "passed to client-reachable component <Form action={createPost}>"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "passed to client-reachable component <Form action={createPost}>",
+      "source_parameters": [
+        "formData"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "app/posts/new/actions.ts",
+          "function_key": "app/posts/new/actions.ts::createPost",
+          "function_name": "createPost",
+          "index": 0,
+          "kind": "form_data_parameter",
+          "parameter": "formData",
+          "reason": "formData is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    },
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "app/users/new/page.tsx",
+      "function": "createUser",
+      "function_key": "app/users/new/page.tsx::createUser",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "passed to client-reachable component <Form action={createUser}>"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "passed to client-reachable component <Form action={createUser}>",
+      "source_parameters": [
+        "formData"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "app/users/new/page.tsx",
+          "function_key": "app/users/new/page.tsx::createUser",
+          "function_name": "createUser",
+          "index": 0,
+          "kind": "form_data_parameter",
+          "parameter": "formData",
+          "reason": "formData is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "client_reachable_actions": 3,
+    "findings": 0,
+    "server_actions": 4
+  },
+  "findings": [],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "16.0.7",
+    "root": "nextjs-auth-starter",
+    "source_file_count": 23
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 22,
+      "directive_kind": "inline",
+      "end_line": 32,
+      "exported": false,
+      "file": "nextjs-auth-starter/app/posts/[id]/page.tsx",
+      "name": "deletePost",
+      "params": [],
+      "rel_path": "app/posts/[id]/page.tsx",
+      "server_action": true,
+      "start_line": 22
+    },
+    {
+      "async_function": true,
+      "body_start_line": 8,
+      "directive_kind": "file",
+      "end_line": 23,
+      "exported": true,
+      "file": "nextjs-auth-starter/app/posts/new/actions.ts",
+      "name": "createPost",
+      "params": [
+        {
+          "index": 0,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "app/posts/new/actions.ts",
+      "server_action": true,
+      "start_line": 8
+    },
+    {
+      "async_function": true,
+      "body_start_line": 8,
+      "directive_kind": "inline",
+      "end_line": 19,
+      "exported": false,
+      "file": "nextjs-auth-starter/app/users/new/page.tsx",
+      "name": "createUser",
+      "params": [
+        {
+          "index": 0,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "app/users/new/page.tsx",
+      "server_action": true,
+      "start_line": 8
+    },
+    {
+      "async_function": true,
+      "body_start_line": 9,
+      "directive_kind": "file",
+      "end_line": 18,
+      "exported": true,
+      "file": "nextjs-auth-starter/lib/db-utils.ts",
+      "name": "checkPostTableExists",
+      "params": [],
+      "rel_path": "lib/db-utils.ts",
+      "server_action": true,
+      "start_line": 9
+    }
+  ],
+  "warnings": []
+}

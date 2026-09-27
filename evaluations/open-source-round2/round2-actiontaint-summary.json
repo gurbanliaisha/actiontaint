@@ -1,0 +1,67 @@
+[
+  {
+    "Findings": 1,
+    "Output": "evaluations/open-source-round2/saas-starter-kit-actiontaint.json",
+    "Parser": "typescript-compiler-api 5.9.3",
+    "Project": "saas-starter-kit",
+    "Reachable": 6,
+    "RuntimeSeconds": 1.09,
+    "ServerActions": 8,
+    "SourceFiles": 40,
+    "Status": "ok",
+    "Target": "real-nextjs-projects-round2/saas-starter-kit",
+    "Warnings": 0
+  },
+  {
+    "Findings": 0,
+    "Output": "evaluations/open-source-round2/papermark-actiontaint.json",
+    "Parser": "typescript-compiler-api 5.9.3",
+    "Project": "papermark",
+    "Reachable": 0,
+    "RuntimeSeconds": 7.48,
+    "ServerActions": 0,
+    "SourceFiles": 1272,
+    "Status": "ok",
+    "Target": "real-nextjs-projects-round2/papermark",
+    "Warnings": 0
+  },
+  {
+    "Findings": 0,
+    "Output": "evaluations/open-source-round2/documenso-openpage-api-actiontaint.json",
+    "Parser": "typescript-compiler-api 5.9.3",
+    "Project": "documenso-openpage-api",
+    "Reachable": 0,
+    "RuntimeSeconds": 0.51,
+    "ServerActions": 0,
+    "SourceFiles": 26,
+    "Status": "ok",
+    "Target": "real-nextjs-projects-round2/documenso/apps/openpage-api",
+    "Warnings": 0
+  },
+  {
+    "Findings": 0,
+    "Output": "evaluations/open-source-round2/dub-web-actiontaint.json",
+    "Parser": "typescript-compiler-api 5.9.3",
+    "Project": "dub-web",
+    "Reachable": 3,
+    "RuntimeSeconds": 21.29,
+    "ServerActions": 10,
+    "SourceFiles": 3185,
+    "Status": "ok",
+    "Target": "real-nextjs-projects-round2/dub/apps/web",
+    "Warnings": 0
+  },
+  {
+    "Findings": 0,
+    "Output": "evaluations/open-source-round2/formbricks-web-actiontaint.json",
+    "Parser": "typescript-compiler-api 5.9.3",
+    "Project": "formbricks-web",
+    "Reachable": 1,
+    "RuntimeSeconds": 20.41,
+    "ServerActions": 19,
+    "SourceFiles": 2058,
+    "Status": "ok",
+    "Target": "real-nextjs-projects-round2/formbricks/apps/web",
+    "Warnings": 0
+  }
+]

@@ -1,0 +1,128 @@
+{
+  "schema": "actiontaint.datasets.seeded-configs.v1",
+  "notes": "Metrics and file lists are taken from the seeded experiment reports under evaluations/.",
+  "experiments": [
+    {
+      "experiment_id": "seeded-medusa-ssrf",
+      "base_project_id": "nextjs-starter-medusa",
+      "evaluation_set": "seeded-medusa-ssrf",
+      "vulnerability": "SSRF",
+      "backend": "local",
+      "mutation_scope": "local workspace mutation",
+      "baseline_scan_target": "nextjs-starter-medusa",
+      "seeded_scan_target": "nextjs-starter-medusa",
+      "seeded_files": [
+        "src/lib/data/actiontaint-seeded-ssrf.ts",
+        "src/modules/actiontaint-seeded/seeded-ssrf-form.tsx"
+      ],
+      "baseline_metrics": {
+        "server_actions": 48,
+        "client_reachable_actions": 22,
+        "actiontaint_findings": 5,
+        "default_codeql_findings": null
+      },
+      "seeded_metrics": {
+        "server_actions": 49,
+        "client_reachable_actions": 23,
+        "actiontaint_findings": 6,
+        "default_codeql_findings": null
+      },
+      "default_codeql_measured": false,
+      "artifact_report": "evaluations/seeded-medusa-ssrf/SEEDED_SSRF_EVALUATION_REPORT.md",
+      "notes": "Early seeded SSRF experiment showing a newly inserted Server Action flow inside a large real project."
+    },
+    {
+      "experiment_id": "seeded-next-saas-stripe-ssrf",
+      "base_project_id": "next-saas-stripe-starter",
+      "evaluation_set": "seeded-next-saas-stripe-ssrf",
+      "vulnerability": "SSRF",
+      "backend": "local",
+      "mutation_scope": "local workspace mutation",
+      "baseline_scan_target": "next-saas-stripe-starter",
+      "seeded_scan_target": "next-saas-stripe-starter",
+      "seeded_files": [
+        "actions/actiontaint-seeded-ssrf.ts",
+        "components/actiontaint-seeded/seeded-ssrf-form.tsx"
+      ],
+      "baseline_metrics": {
+        "server_actions": 4,
+        "client_reachable_actions": 0,
+        "actiontaint_findings": 0,
+        "default_codeql_findings": 0
+      },
+      "seeded_metrics": {
+        "server_actions": 5,
+        "client_reachable_actions": 1,
+        "actiontaint_findings": 1,
+        "default_codeql_findings": 0
+      },
+      "default_codeql_measured": true,
+      "artifact_report": "evaluations/seeded-next-saas-stripe-ssrf/SEEDED_SSRF_EVALUATION_REPORT.md",
+      "notes": "Clean seeded SSRF case with zero baseline findings before the mutation."
+    },
+    {
+      "experiment_id": "seeded-dub-idor",
+      "base_project_id": "dub-web",
+      "evaluation_set": "seeded-dub-idor",
+      "vulnerability": "Broken Authorization / IDOR",
+      "backend": "codeql",
+      "mutation_scope": "separate copied checkout",
+      "baseline_scan_target": "real-nextjs-projects-round2/dub/apps/web",
+      "seeded_scan_target": "real-nextjs-projects-round2/dub-seeded-idor/apps/web",
+      "seeded_files": [
+        "lib/actions/actiontaint-seeded-idor.ts",
+        "ui/actiontaint-seeded/seeded-idor-form.tsx",
+        "app/actiontaint-seeded/page.tsx"
+      ],
+      "baseline_metrics": {
+        "source_files": 3185,
+        "server_actions": 10,
+        "client_reachable_actions": 3,
+        "actiontaint_findings": 0,
+        "default_codeql_findings": 32
+      },
+      "seeded_metrics": {
+        "source_files": 3188,
+        "server_actions": 11,
+        "client_reachable_actions": 4,
+        "actiontaint_findings": 1,
+        "default_codeql_findings": 32
+      },
+      "default_codeql_measured": true,
+      "artifact_report": "evaluations/seeded-dub-idor/SEEDED_IDOR_EVALUATION_REPORT.md",
+      "notes": "Authenticated IDOR seed using useActionState and FormData into a Prisma delete without a visible ownership constraint."
+    },
+    {
+      "experiment_id": "seeded-formbricks-idor",
+      "base_project_id": "formbricks-web",
+      "evaluation_set": "seeded-formbricks-idor",
+      "vulnerability": "Broken Authorization / IDOR",
+      "backend": "codeql",
+      "mutation_scope": "separate copied checkout",
+      "baseline_scan_target": "real-nextjs-projects-round2/formbricks/apps/web",
+      "seeded_scan_target": "real-nextjs-projects-round2/formbricks-seeded-idor/apps/web",
+      "seeded_files": [
+        "lib/actions/actiontaint-seeded-idor.ts",
+        "modules/actiontaint-seeded/seeded-idor-form.tsx",
+        "app/actiontaint-seeded/page.tsx"
+      ],
+      "baseline_metrics": {
+        "source_files": 2058,
+        "server_actions": 19,
+        "client_reachable_actions": 1,
+        "actiontaint_findings": 0,
+        "default_codeql_findings": 4
+      },
+      "seeded_metrics": {
+        "source_files": 2061,
+        "server_actions": 20,
+        "client_reachable_actions": 2,
+        "actiontaint_findings": 1,
+        "default_codeql_findings": 4
+      },
+      "default_codeql_measured": true,
+      "artifact_report": "evaluations/seeded-formbricks-idor/SEEDED_IDOR_EVALUATION_REPORT.md",
+      "notes": "CodeQL-backed seeded IDOR experiment on a large form-heavy production-style app."
+    }
+  ]
+}

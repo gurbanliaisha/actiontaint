@@ -1,0 +1,175 @@
+{
+  "schema": "actiontaint.datasets.evaluation-sets.v1",
+  "evaluation_sets": [
+    {
+      "evaluation_set": "master-summary",
+      "kind": "meta-report",
+      "unit": "artifact-summary",
+      "count": 1,
+      "tools_present": [
+        "ActionTaint",
+        "Default CodeQL",
+        "Semgrep"
+      ],
+      "artifact_paths": [
+        "evaluations/MASTER_EVALUATION_REPORT.md"
+      ],
+      "notes": "Consolidated summary of all major evaluation artifacts included in this repository."
+    },
+    {
+      "evaluation_set": "synthetic-benchmarks",
+      "kind": "benchmark",
+      "unit": "benchmarks",
+      "count": 13,
+      "tools_present": [
+        "ActionTaint",
+        "Default CodeQL"
+      ],
+      "artifact_paths": [
+        "evaluations/benchmark-actiontaint-vs-default-codeql-summary.json"
+      ],
+      "notes": "Original synthetic benchmark suite covering core Server Action patterns."
+    },
+    {
+      "evaluation_set": "complex-benchmarks",
+      "kind": "benchmark",
+      "unit": "benchmarks",
+      "count": 5,
+      "tools_present": [
+        "ActionTaint",
+        "Default CodeQL"
+      ],
+      "artifact_paths": [
+        "evaluations/complex-benchmarks-report/FINAL_REPORT.md",
+        "evaluations/complex-benchmarks-report/"
+      ],
+      "notes": "More realistic multi-step benchmark suite with layered flows and one safe case."
+    },
+    {
+      "evaluation_set": "real-world-round1",
+      "kind": "real-world",
+      "unit": "projects",
+      "count": 5,
+      "tools_present": [
+        "ActionTaint",
+        "Default CodeQL"
+      ],
+      "artifact_paths": [
+        "evaluations/open-source-real/OPEN_SOURCE_REAL_PROJECT_REPORT.md",
+        "evaluations/open-source-real/"
+      ],
+      "notes": "First real-project evaluation round using the earlier local ActionTaint backend."
+    },
+    {
+      "evaluation_set": "real-world-round2",
+      "kind": "real-world",
+      "unit": "projects",
+      "count": 5,
+      "tools_present": [
+        "ActionTaint",
+        "Default CodeQL"
+      ],
+      "artifact_paths": [
+        "evaluations/open-source-round2/ROUND2_REAL_PROJECT_REPORT.md",
+        "evaluations/open-source-round2/round2-actiontaint-summary.json",
+        "evaluations/open-source-round2/round2-comparison-summary.json",
+        "evaluations/open-source-round2/codeql-baseline/round2-codeql-summary.json"
+      ],
+      "notes": "Second real-project round focusing on larger repos and subapps."
+    },
+    {
+      "evaluation_set": "round3-comparison",
+      "kind": "real-world",
+      "unit": "projects",
+      "count": 3,
+      "tools_present": [
+        "ActionTaint",
+        "Default CodeQL"
+      ],
+      "artifact_paths": [
+        "evaluations/round3-comparison/"
+      ],
+      "notes": "Three-project comparison set with per-project ActionTaint JSON and default CodeQL SARIF."
+    },
+    {
+      "evaluation_set": "seeded-medusa-ssrf",
+      "kind": "seeded",
+      "unit": "experiments",
+      "count": 1,
+      "tools_present": [
+        "ActionTaint"
+      ],
+      "artifact_paths": [
+        "evaluations/seeded-medusa-ssrf/SEEDED_SSRF_EVALUATION_REPORT.md",
+        "evaluations/seeded-medusa-ssrf/nextjs-starter-medusa-seeded-ssrf-actiontaint.json"
+      ],
+      "notes": "Early seeded SSRF experiment on a real open-source project; default CodeQL seeded measurements were not recorded."
+    },
+    {
+      "evaluation_set": "seeded-next-saas-stripe-ssrf",
+      "kind": "seeded",
+      "unit": "experiments",
+      "count": 1,
+      "tools_present": [
+        "ActionTaint",
+        "Default CodeQL"
+      ],
+      "artifact_paths": [
+        "evaluations/seeded-next-saas-stripe-ssrf/SEEDED_SSRF_EVALUATION_REPORT.md",
+        "evaluations/seeded-next-saas-stripe-ssrf/next-saas-stripe-starter-seeded-ssrf-actiontaint.json",
+        "evaluations/seeded-next-saas-stripe-ssrf/codeql-baseline/next-saas-stripe-starter-seeded-codeql.sarif"
+      ],
+      "notes": "Seeded SSRF experiment on a project with zero baseline ActionTaint findings."
+    },
+    {
+      "evaluation_set": "seeded-dub-idor",
+      "kind": "seeded",
+      "unit": "experiments",
+      "count": 1,
+      "tools_present": [
+        "ActionTaint",
+        "Default CodeQL"
+      ],
+      "artifact_paths": [
+        "evaluations/seeded-dub-idor/SEEDED_IDOR_EVALUATION_REPORT.md",
+        "evaluations/seeded-dub-idor/dub-web-baseline-actiontaint.json",
+        "evaluations/seeded-dub-idor/dub-web-baseline-default-codeql.sarif",
+        "evaluations/seeded-dub-idor/dub-web-seeded-idor-actiontaint.json",
+        "evaluations/seeded-dub-idor/dub-web-seeded-idor-default-codeql.sarif"
+      ],
+      "notes": "CodeQL-backed seeded IDOR experiment on the largest evaluated round-2 target."
+    },
+    {
+      "evaluation_set": "seeded-formbricks-idor",
+      "kind": "seeded",
+      "unit": "experiments",
+      "count": 1,
+      "tools_present": [
+        "ActionTaint",
+        "Default CodeQL"
+      ],
+      "artifact_paths": [
+        "evaluations/seeded-formbricks-idor/SEEDED_IDOR_EVALUATION_REPORT.md",
+        "evaluations/seeded-formbricks-idor/formbricks-web-baseline-actiontaint.json",
+        "evaluations/seeded-formbricks-idor/formbricks-web-baseline-default-codeql.sarif",
+        "evaluations/seeded-formbricks-idor/formbricks-web-seeded-idor-actiontaint.json",
+        "evaluations/seeded-formbricks-idor/formbricks-web-seeded-idor-default-codeql.sarif"
+      ],
+      "notes": "CodeQL-backed seeded IDOR experiment on a large form-heavy production-style subapp."
+    },
+    {
+      "evaluation_set": "static-analyzer-comparison",
+      "kind": "supplementary",
+      "unit": "projects",
+      "count": 5,
+      "tools_present": [
+        "ActionTaint",
+        "Semgrep"
+      ],
+      "artifact_paths": [
+        "evaluations/static-analyzer-comparison/"
+      ],
+      "notes": "Supplementary comparison set showing ActionTaint and Semgrep outputs on a small set of real projects."
+    }
+  ]
+}

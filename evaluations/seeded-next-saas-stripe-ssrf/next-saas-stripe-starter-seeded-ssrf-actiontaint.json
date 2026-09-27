@@ -1,0 +1,190 @@
+{
+  "backend_used": "local",
+  "boundaries": [
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "actions/actiontaint-seeded-ssrf.ts",
+      "function": "actionTaintSeededWebhookPreview",
+      "function_key": "actions/actiontaint-seeded-ssrf.ts::actionTaintSeededWebhookPreview",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "used in useFormState(actionTaintSeededWebhookPreview, ...)",
+          "used in <form action={formAction}>"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "used in useFormState(actionTaintSeededWebhookPreview, ...); used in <form action={formAction}>",
+      "source_parameters": [
+        "formData"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "actions/actiontaint-seeded-ssrf.ts",
+          "function_key": "actions/actiontaint-seeded-ssrf.ts::actionTaintSeededWebhookPreview",
+          "function_name": "actionTaintSeededWebhookPreview",
+          "index": 1,
+          "kind": "form_data_parameter",
+          "parameter": "formData",
+          "reason": "formData is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "client_reachable_actions": 1,
+    "findings": 1,
+    "server_actions": 5
+  },
+  "findings": [
+    {
+      "explanation": "ActionTaint treats actionTaintSeededWebhookPreview as an implicit HTTP endpoint because Next.js exposes client-reachable Server Actions. A client-controlled value flows into fetch.",
+      "rule_id": "actiontaint/ssrf-fetch",
+      "severity": "HIGH",
+      "sink_file": "actions/actiontaint-seeded-ssrf.ts",
+      "sink_line": 11,
+      "sink_snippet": "await fetch(callbackUrl, { cache: \"no-store\" });",
+      "source_function": "actions/actiontaint-seeded-ssrf.ts::actionTaintSeededWebhookPreview",
+      "source_parameter": "formData",
+      "taint_path": [
+        "formData",
+        "formData.get(\"callbackUrl\") as string -> callbackUrl",
+        "await fetch(callbackUrl, { cache: \"no-store\" });"
+      ],
+      "vulnerability_type": "SSRF"
+    }
+  ],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "14.2.5",
+    "root": "next-saas-stripe-starter",
+    "source_file_count": 191
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 8,
+      "directive_kind": "file",
+      "end_line": 14,
+      "exported": true,
+      "file": "next-saas-stripe-starter/actions/actiontaint-seeded-ssrf.ts",
+      "name": "actionTaintSeededWebhookPreview",
+      "params": [
+        {
+          "index": 0,
+          "name": "_currentState",
+          "raw": "_currentState: unknown",
+          "type_hint": "unknown"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "actions/actiontaint-seeded-ssrf.ts",
+      "server_action": true,
+      "start_line": 5
+    },
+    {
+      "async_function": true,
+      "body_start_line": 17,
+      "directive_kind": "file",
+      "end_line": 66,
+      "exported": true,
+      "file": "next-saas-stripe-starter/actions/generate-user-stripe.ts",
+      "name": "generateUserStripe",
+      "params": [
+        {
+          "index": 0,
+          "name": "priceId",
+          "raw": "priceId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "actions/generate-user-stripe.ts",
+      "server_action": true,
+      "start_line": 17
+    },
+    {
+      "async_function": true,
+      "body_start_line": 18,
+      "directive_kind": "file",
+      "end_line": 41,
+      "exported": true,
+      "file": "next-saas-stripe-starter/actions/open-customer-portal.ts",
+      "name": "openCustomerPortal",
+      "params": [
+        {
+          "index": 0,
+          "name": "userStripeId",
+          "raw": "userStripeId: string",
+          "type_hint": "string"
+        }
+      ],
+      "rel_path": "actions/open-customer-portal.ts",
+      "server_action": true,
+      "start_line": 16
+    },
+    {
+      "async_function": true,
+      "body_start_line": 12,
+      "directive_kind": "file",
+      "end_line": 38,
+      "exported": true,
+      "file": "next-saas-stripe-starter/actions/update-user-name.ts",
+      "name": "updateUserName",
+      "params": [
+        {
+          "index": 0,
+          "name": "userId",
+          "raw": "userId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "data",
+          "raw": "data: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "actions/update-user-name.ts",
+      "server_action": true,
+      "start_line": 12
+    },
+    {
+      "async_function": true,
+      "body_start_line": 14,
+      "directive_kind": "file",
+      "end_line": 40,
+      "exported": true,
+      "file": "next-saas-stripe-starter/actions/update-user-role.ts",
+      "name": "updateUserRole",
+      "params": [
+        {
+          "index": 0,
+          "name": "userId",
+          "raw": "userId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "data",
+          "raw": "data: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "actions/update-user-role.ts",
+      "server_action": true,
+      "start_line": 14
+    }
+  ],
+  "warnings": []
+}

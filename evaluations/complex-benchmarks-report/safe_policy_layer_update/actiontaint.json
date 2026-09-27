@@ -1,0 +1,108 @@
+{
+  "backend_used": "codeql",
+  "boundaries": [
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "app/actions.ts",
+      "function": "renameTask",
+      "function_key": "app/actions.ts::renameTask",
+      "input_semantics": {
+        "bind_arguments": [
+          {
+            "classification": "route_param",
+            "expression": "params.workspaceId",
+            "reason": "bind argument is derived from route params",
+            "target_parameter": "workspaceId"
+          }
+        ],
+        "callsite_reasons": [
+          "used in <form action={action}>"
+        ],
+        "hidden_inputs": [
+          {
+            "file": "app/page.tsx",
+            "line": 12,
+            "name": "taskId",
+            "value": "task_123"
+          }
+        ]
+      },
+      "reason": "used in <form action={action}>",
+      "source_parameters": [
+        "workspaceId",
+        "formData"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": "params.workspaceId",
+          "file": "app/actions.ts",
+          "function_key": "app/actions.ts::renameTask",
+          "function_name": "renameTask",
+          "index": 0,
+          "kind": "bind_route_param",
+          "parameter": "workspaceId",
+          "reason": "bind argument is derived from route params"
+        },
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "app/actions.ts",
+          "function_key": "app/actions.ts::renameTask",
+          "function_name": "renameTask",
+          "index": 1,
+          "kind": "form_data_parameter",
+          "parameter": "formData",
+          "reason": "formData is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "client_reachable_actions": 1,
+    "findings": 0,
+    "server_actions": 1
+  },
+  "findings": [],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "15.3.0",
+    "root": "benchmarks/safe_policy_layer_update",
+    "source_file_count": 5
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 6,
+      "directive_kind": "file",
+      "end_line": 21,
+      "exported": true,
+      "file": "benchmarks/safe_policy_layer_update/app/actions.ts",
+      "name": "renameTask",
+      "params": [
+        {
+          "index": 0,
+          "name": "workspaceId",
+          "raw": "workspaceId: string",
+          "type_hint": "string"
+        },
+        {
+          "index": 1,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "app/actions.ts",
+      "server_action": true,
+      "start_line": 6
+    }
+  ],
+  "warnings": [
+    "CodeQL completed in 116.20s."
+  ]
+}

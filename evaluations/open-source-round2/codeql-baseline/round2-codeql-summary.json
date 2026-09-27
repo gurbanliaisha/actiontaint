@@ -1,0 +1,37 @@
+[
+  {
+    "Findings": 4,
+    "Project": "saas-starter-kit",
+    "RuntimeSeconds": 106.37,
+    "Sarif": "evaluations/open-source-round2/codeql-baseline/saas-starter-kit.sarif",
+    "Status": "ok"
+  },
+  {
+    "Findings": 78,
+    "Project": "papermark",
+    "RuntimeSeconds": 314.19,
+    "Sarif": "evaluations/open-source-round2/codeql-baseline/papermark.sarif",
+    "Status": "ok"
+  },
+  {
+    "Findings": 0,
+    "Project": "documenso-openpage-api",
+    "RuntimeSeconds": 80.65,
+    "Sarif": "evaluations/open-source-round2/codeql-baseline/documenso-openpage-api.sarif",
+    "Status": "ok"
+  },
+  {
+    "Findings": 32,
+    "Project": "dub-web",
+    "RuntimeSeconds": 1397.69,
+    "Sarif": "evaluations/open-source-round2/codeql-baseline/dub-web.sarif",
+    "Status": "ok"
+  },
+  {
+    "Findings": 4,
+    "Project": "formbricks-web",
+    "RuntimeSeconds": 515.75,
+    "Sarif": "evaluations/open-source-round2/codeql-baseline/formbricks-web.sarif",
+    "Status": "ok"
+  }
+]

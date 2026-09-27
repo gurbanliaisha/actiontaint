@@ -1,0 +1,7 @@
+{
+  "expected_actions": 1,
+  "expected_reachable": 1,
+  "expected_findings": [
+    { "type": "SQL Injection", "source_function": "updateTenant" }
+  ]
+}

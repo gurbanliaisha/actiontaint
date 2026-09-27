@@ -1,0 +1,62 @@
+[
+  {
+    "ActionTaintFindings": 1,
+    "ActionTaintRuntime": 1.09,
+    "ActionTaintStatus": "ok",
+    "CodeQLFindings": 4,
+    "CodeQLRuntime": 106.37,
+    "CodeQLStatus": "ok",
+    "Project": "saas-starter-kit",
+    "Reachable": 6,
+    "ServerActions": 8,
+    "SourceFiles": 40
+  },
+  {
+    "ActionTaintFindings": 0,
+    "ActionTaintRuntime": 7.48,
+    "ActionTaintStatus": "ok",
+    "CodeQLFindings": 78,
+    "CodeQLRuntime": 314.19,
+    "CodeQLStatus": "ok",
+    "Project": "papermark",
+    "Reachable": 0,
+    "ServerActions": 0,
+    "SourceFiles": 1272
+  },
+  {
+    "ActionTaintFindings": 0,
+    "ActionTaintRuntime": 0.51,
+    "ActionTaintStatus": "ok",
+    "CodeQLFindings": 0,
+    "CodeQLRuntime": 80.65,
+    "CodeQLStatus": "ok",
+    "Project": "documenso-openpage-api",
+    "Reachable": 0,
+    "ServerActions": 0,
+    "SourceFiles": 26
+  },
+  {
+    "ActionTaintFindings": 0,
+    "ActionTaintRuntime": 21.29,
+    "ActionTaintStatus": "ok",
+    "CodeQLFindings": 32,
+    "CodeQLRuntime": 1397.69,
+    "CodeQLStatus": "ok",
+    "Project": "dub-web",
+    "Reachable": 3,
+    "ServerActions": 10,
+    "SourceFiles": 3185
+  },
+  {
+    "ActionTaintFindings": 0,
+    "ActionTaintRuntime": 20.41,
+    "ActionTaintStatus": "ok",
+    "CodeQLFindings": 4,
+    "CodeQLRuntime": 515.75,
+    "CodeQLStatus": "ok",
+    "Project": "formbricks-web",
+    "Reachable": 1,
+    "ServerActions": 19,
+    "SourceFiles": 2058
+  }
+]

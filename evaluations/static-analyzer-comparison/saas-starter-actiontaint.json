@@ -1,0 +1,53 @@
+{
+  "backend_used": "local",
+  "boundaries": [
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "app/(login)/actions.ts",
+      "function": "signOut",
+      "function_key": "app/(login)/actions.ts::signOut",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as signOut(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as signOut(...)",
+      "source_parameters": [],
+      "source_specs": []
+    }
+  ],
+  "counts": {
+    "client_reachable_actions": 1,
+    "findings": 0,
+    "server_actions": 1
+  },
+  "findings": [],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "15.6.0-canary.59",
+    "root": "saas-starter",
+    "source_file_count": 41
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 224,
+      "directive_kind": "file",
+      "end_line": 229,
+      "exported": true,
+      "file": "saas-starter/app/(login)/actions.ts",
+      "name": "signOut",
+      "params": [],
+      "rel_path": "app/(login)/actions.ts",
+      "server_action": true,
+      "start_line": 224
+    }
+  ],
+  "warnings": []
+}

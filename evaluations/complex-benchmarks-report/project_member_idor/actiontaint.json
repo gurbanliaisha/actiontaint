@@ -1,0 +1,102 @@
+{
+  "backend_used": "codeql",
+  "boundaries": [
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "app/actions.ts",
+      "function": "removeMember",
+      "function_key": "app/actions.ts::removeMember",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "used in <form action={removeMember}>"
+        ],
+        "hidden_inputs": [
+          {
+            "file": "app/page.tsx",
+            "line": 6,
+            "name": "memberId",
+            "value": "member_999"
+          }
+        ]
+      },
+      "reason": "used in <form action={removeMember}>",
+      "source_parameters": [
+        "formData"
+      ],
+      "source_specs": [
+        {
+          "confidence": "high",
+          "expression": null,
+          "file": "app/actions.ts",
+          "function_key": "app/actions.ts::removeMember",
+          "function_name": "removeMember",
+          "index": 0,
+          "kind": "form_data_parameter",
+          "parameter": "formData",
+          "reason": "formData is a FormData parameter of a client-reachable Server Action"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "client_reachable_actions": 1,
+    "findings": 1,
+    "server_actions": 1
+  },
+  "findings": [
+    {
+      "explanation": "Generated ActionTaint CodeQL query reported a framework-derived taint path.",
+      "rule_id": "js/actiontaint/generated-server-action-taint",
+      "severity": "HIGH",
+      "sink_file": "app/actions.ts",
+      "sink_line": 18,
+      "sink_snippet": "ActionTaint: Broken Authorization / IDOR from app/actions.ts::removeMember::formData to app/actions.ts::removeMember dangerous sink. Source is [client-controlled Server Action input](1).",
+      "source_function": "app/actions.ts::removeMember",
+      "source_parameter": "formData",
+      "taint_path": [
+        "app/actions.ts:8 formDat ... berId\")",
+        "app/actions.ts:8 memberId",
+        "app/actions.ts:20 memberId",
+        "app/actions.ts:19 {/n      ... d/n    }",
+        "app/actions.ts:18 {/n    w ...   }/n  }"
+      ],
+      "vulnerability_type": "Broken Authorization / IDOR"
+    }
+  ],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "15.3.0",
+    "root": "benchmarks/project_member_idor",
+    "source_file_count": 4
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 6,
+      "directive_kind": "file",
+      "end_line": 23,
+      "exported": true,
+      "file": "benchmarks/project_member_idor/app/actions.ts",
+      "name": "removeMember",
+      "params": [
+        {
+          "index": 0,
+          "name": "formData",
+          "raw": "formData: FormData",
+          "type_hint": "FormData"
+        }
+      ],
+      "rel_path": "app/actions.ts",
+      "server_action": true,
+      "start_line": 6
+    }
+  ],
+  "warnings": [
+    "CodeQL completed in 115.76s."
+  ]
+}

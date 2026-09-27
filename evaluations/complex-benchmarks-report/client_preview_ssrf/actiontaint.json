@@ -1,0 +1,95 @@
+{
+  "backend_used": "codeql",
+  "boundaries": [
+    {
+      "boundary_type": "implicit_http_endpoint",
+      "client_callable": true,
+      "file": "app/actions.ts",
+      "function": "refreshPreview",
+      "function_key": "app/actions.ts::refreshPreview",
+      "input_semantics": {
+        "bind_arguments": [],
+        "callsite_reasons": [
+          "imported Server Action called from 'use client' file as refreshPreview(...)"
+        ],
+        "hidden_inputs": []
+      },
+      "reason": "imported Server Action called from 'use client' file as refreshPreview(...)",
+      "source_parameters": [
+        "input"
+      ],
+      "source_specs": [
+        {
+          "confidence": "medium",
+          "expression": null,
+          "file": "app/actions.ts",
+          "function_key": "app/actions.ts::refreshPreview",
+          "function_name": "refreshPreview",
+          "index": 0,
+          "kind": "client_argument",
+          "parameter": "input",
+          "reason": "parameter is callable from a 'use client' component"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "client_reachable_actions": 1,
+    "findings": 1,
+    "server_actions": 1
+  },
+  "findings": [
+    {
+      "explanation": "Generated ActionTaint CodeQL query reported a framework-derived taint path.",
+      "rule_id": "js/actiontaint/generated-server-action-taint",
+      "severity": "HIGH",
+      "sink_file": "app/http.ts",
+      "sink_line": 2,
+      "sink_snippet": "ActionTaint: SSRF from app/actions.ts::refreshPreview::input to app/http.ts::fetchPreview dangerous sink. Source is [client-controlled Server Action input](1).",
+      "source_function": "app/actions.ts::refreshPreview",
+      "source_parameter": "input",
+      "taint_path": [
+        "app/actions.ts:5 input",
+        "app/actions.ts:6 input",
+        "app/actions.ts:6 input.url",
+        "app/http.ts:1 url",
+        "app/http.ts:2 url"
+      ],
+      "vulnerability_type": "SSRF"
+    }
+  ],
+  "parser_used": "typescript-compiler-api 5.9.3",
+  "project": {
+    "has_app_router": true,
+    "has_pages_router": false,
+    "is_next_project": true,
+    "next_version": "15.3.0",
+    "root": "benchmarks/client_preview_ssrf",
+    "source_file_count": 4
+  },
+  "server_actions": [
+    {
+      "async_function": true,
+      "body_start_line": 5,
+      "directive_kind": "file",
+      "end_line": 11,
+      "exported": true,
+      "file": "benchmarks/client_preview_ssrf/app/actions.ts",
+      "name": "refreshPreview",
+      "params": [
+        {
+          "index": 0,
+          "name": "input",
+          "raw": "input: { url: string; cacheKey?: string }",
+          "type_hint": "{ url: string; cacheKey?: string }"
+        }
+      ],
+      "rel_path": "app/actions.ts",
+      "server_action": true,
+      "start_line": 5
+    }
+  ],
+  "warnings": [
+    "CodeQL completed in 120.69s."
+  ]
+}
